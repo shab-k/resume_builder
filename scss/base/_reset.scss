@@ -1,0 +1,47 @@
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+
+html {
+  font-size: 100%; /*16px*/
+  // font: normal 100% /$base__line-height $text-font-stack;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  // box-sizing: border-box;
+}
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+}
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// a {
+//   color: $brand-color;
+//   text-decoration: none;
+//   @include on-event {
+//     color: $text-color;
+//     text-decoration: underline;
+//   }
+// }
+
+a {
+  // color: $base__accent-color;
+  transition: color $base-transition-duration $base-transition-timing;
+  text-decoration: none;
+}
+

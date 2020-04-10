@@ -1,0 +1,72 @@
+body {
+  // font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+  // font-family: 'Lato', sans-serif;
+  // font-family: 'Roboto Slab', serif;
+  // line-height: 1.5;
+  color: $base__font-color;
+}
+
+// 1.125em
+h1, h2, h3, h4, h5, h6, p,
+ul, ol, dl, dd,
+figure, blockquote, details, hr,
+fieldset, pre, table,caption,
+menu {
+  margin: 0 0 0.7rem;
+}
+
+.yotta {
+  font-size: 2.2807rem;
+  line-height: 3rem;
+}
+
+.zetta {
+  font-size: 2.0273rem;
+  line-height: 3rem;
+}
+
+h1,
+.exa {
+  font-size: 1.802rem;
+  line-height: 2.625rem;
+}
+
+h2,
+.peta {
+  font-size: 1.6018rem;
+  line-height: 2.25rem;
+}
+
+h3,
+.tera {
+  font-size: 1.4238rem;
+  line-height: 1.875rem;
+}
+
+h4,
+.giga {
+  font-size: 1.2656rem;
+  line-height: 1.875rem;
+}
+
+h5,
+.mega {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+h6,
+.kilo,
+input,
+textarea {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+small,
+.milli {
+  font-size: .8rem;
+  line-height: 1.5rem;
+}
+

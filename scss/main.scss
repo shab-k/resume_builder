@@ -1,0 +1,44 @@
+@charset 'UTF-8';
+//** Always check the orders inside the compiled CSS file
+// Configuration and helpers
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
+  
+// Vendors
+@import
+  'vendors/fontawesome',
+  'vendors/bootstrap';
+
+// Base stuff
+@import
+  'base/reset',
+  'base/fonts',
+  'base/typography';
+
+// Layout-related sections
+@import
+  'layouts/navigation',
+  // 'layouts/grid',
+  'layouts/header',
+  'layouts/footer',
+  // 'layouts/sidebar',
+  'layouts/forms';
+  
+// Components
+@import
+  'components/buttons',
+  'components/icons',
+  'components/media-objects';
+
+// Pages
+@import
+  'pages/home',
+  'pages/resume';
+  
+// Media Queries
+@import 'abstracts/responsive'; //The order is important!!!';
+
+
+

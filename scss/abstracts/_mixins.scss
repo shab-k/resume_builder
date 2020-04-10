@@ -1,0 +1,72 @@
+//To use, go to _responsive.scss
+
+
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      @include make-font-size($fs-font-size);
+    }
+    @else {
+      // If $fs-font-size is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        @include make-font-size($fs-font-size);
+      }
+    }
+  }
+}
+
+// Utility function for mixin font-size
+@mixin make-font-size($fs-font-size) {
+  // If $fs-font-size is a list, include
+  // both font-size and line-height
+  @if type-of($fs-font-size) == "list" {
+    font-size: nth($fs-font-size, 1);
+    @if (length($fs-font-size) > 1) {
+      line-height: nth($fs-font-size, 2);
+    }
+  }
+  @else {
+    font-size: $fs-font-size;
+  }
+}
+
+
+// Extra small devices (portrait phones, less than 576px)
+@mixin media-xs {
+  @media (min-width: 319.98px) {   //20em = 320px
+    @content;
+  }
+}
+@mixin media-sm {
+  @media (min-width: 575.98px) {  //36em = 576px
+    @content;
+  }
+}
+// Small devices (landscape phones, less than 768px)
+@mixin media-md {
+  @media (min-width: 767.98px) {  //48em = 768px
+    @content;
+  }
+}
+@mixin media-max-md {
+  @media (max-width: 767.98px) {  //48em = 768px
+    @content;
+  }
+}
+// Medium devices (tablets, less than 992px)
+@mixin media-lg {
+  @media (min-width: 991.98px) {  //62em = 992px
+    @content;
+  }
+}
+// Large devices (desktops, less than 1200px)
+@mixin media-xl {  
+  @media (min-width: 1199.98px) {   //75em = 1200px
+    @content;
+  }
+}
+

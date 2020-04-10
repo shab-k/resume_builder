@@ -1,0 +1,102 @@
+button,
+.btn {
+	display: inline-block;
+	vertical-align: middle;
+	width: auto;
+	// padding: $base-spacing;
+	padding: 0.75rem 1.5rem;
+	margin: 0 0 $base-spacing;
+	background-color: $secondary__accent-color;
+	color: $white;
+	font-weight: bold;
+	white-space: nowrap;
+	transition: all $base-transition-duration $base-transition-timing;
+	// cursor: pointer;
+    border-radius: $base__border-radius;
+    // border: 3px solid #333;
+	box-shadow: $base__box-shadow;
+	// @include breakpoint(sm) {
+	// 	color: blue;
+	// }
+}
+btn:hover,
+btn:focus {
+	background-color: darken($base__accent-color, 10%);
+	color: $base__background-color;
+	box-shadow: $hover-box-shadow;
+}
+
+.btn--light {
+	background-color: darken($base__background-color, 10%);
+	color: $base__accent-color;
+	
+	&:hover,
+	&:focus {
+		background-color: darken($base__background-color, 20%);
+		color: darken($base__accent-color, 10%);
+	}
+}
+
+.btn--dark {
+	background-color: $base__font-color;
+	
+	&:hover,
+	&:focus {
+		background-color: darken($base__font-color, 90%);
+	}
+}
+
+.btn--secondary {
+	background-color: $secondary__accent-color;
+	
+	&:hover,
+	&:focus {
+		background-color: darken($secondary__accent-color, 20%);
+	}
+}
+.btn--secondary-outline {
+	background-color: $color-off-white;
+	border-color: $secondary__accent-color;
+	color: $secondary__accent-color;
+	
+	&:hover,
+	&:focus {
+		// background-color: darken($secondary-accent-color, 10%);
+		background-color: $secondary__accent-color;
+		color: $color-off-white;
+	}
+}
+
+.btn--alert {
+	background-color: $base__alert-color;
+	
+	&:hover,
+	&:focus {
+		background-color: darken($base__alert-color, 10%);
+	}
+}
+// .btn[disabled] {
+//     cursor: not-allowed;
+//     background-color: var(--btn-disabled-bg);
+//     color: var(--btn-disabled-label);
+//     box-shadow: none;
+//     opacity: 0.6;
+
+//     &:visited {
+//         color: var(--btn-disabled-label);
+//     }
+// }
+
+/* button size */
+.btn--sm {
+	padding: $base-spacing/1.25;
+	font-size: $base__font-size/1.15;
+}
+.btn--lg {
+	padding: $base-spacing $base-spacing*1.5;
+}
+.btn--x-lg {
+	padding: $base-spacing*1.25;
+	font-size: $base__font-size*1.25;
+}
+

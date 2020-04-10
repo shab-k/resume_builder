@@ -1,0 +1,40 @@
+.main-nav {
+  display: flex;
+  // height: 60px;
+  // padding: 20px;
+  background-color: $dark_grey;
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main-nav ul li {
+  padding: 10px 20px 0 0;
+}
+
+.main-nav ul li a {
+  // font-weight: bold;
+  color: $white;
+  padding-bottom: 2px;
+}
+
+.main-nav ul li a:hover {
+  border-bottom: 2px solid $white;
+}
+
+.main-nav ul.main-menu {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.menu-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 2;
+  display: none;
+  color: $base__accent-color;
+}

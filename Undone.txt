@@ -1,0 +1,10 @@
+- Design problems + typography
+- Responsiveness
+- Edit CV
+- Form & regex
+- Upload photo
+- PDO
+- Git
+- Deploy
+- Github
+- Updating portfolio
