@@ -1,7 +1,7 @@
 - Design problems + typography
 - Form & Regex
 - Upload photo
-- PDO
+- Fix footer
 - Edit CV
 - Responsiveness
 - Clean + delete undone text file
@@ -12,3 +12,4 @@
 Apr. 10 2020:
 ===============
 - Git
+- PDO

@@ -87,34 +87,19 @@ if (isset($_POST['submit'])) {
     if (array_filter($errors)) {
         echo 'errors in form';
     } else {
-        // $full_name = $email = $phone = $social_account = $skills = $user_profile = $education = $experience = '';
-        // escape sql chars
-        // $full_name = mysqli_real_escape_string($conn, $_POST['full_name']);
-        // $email = mysqli_real_escape_string($conn, $_POST['email']);
-        // $phone = mysqli_real_escape_string($conn, $_POST['phone']);
-        // $social_account = mysqli_real_escape_string($conn, $_POST['social_account']);
-        // $skills = mysqli_real_escape_string($conn, $_POST['skills']);
-        // $user_profile = mysqli_real_escape_string($conn, $_POST['user_profile']);
-        // $education = mysqli_real_escape_string($conn, $_POST['education']);
-        // $experience = mysqli_real_escape_string($conn, $_POST['experience']);
-
-        // create sql
-        $sql = "INSERT INTO resumes(full_name, email, phone, social_account, skills, user_profile, education, experience ) VALUES(':full_name', ':email', ':phone', ':social_account', ':skills', ':user_profile', ':education', ':experience')";
-        // $sql = 'INSERT INTO posts(title, body, author) VALUES(:title, :body, :author)';
+       // create sql
+        $sql = "INSERT INTO resumes(full_name, email, phone, social_account, skills, user_profile, education, experience ) VALUES(:full_name, :email, :phone, :social_account, :skills, :user_profile, :education, :experience)";
         $stmt = $pdo->prepare($sql);
-        
+
         // echo 'Post Added';
-        // save to db and check
-        // if (mysqli_query($conn, $sql)) {
-        //     // success
-        //     header('Location: index.php');
-        // } else {
+
+        if ($stmt->execute([':full_name' => $full_name, ':email' => $email, ':phone' => $phone, ':social_account' => $social_account, ':skills' => $skills, ':user_profile' => $user_profile, ':education' => $education, ':experience' => $experience])) {
+            // $message = 'data inserted successfully';
+            header('Location: index.php');
+        } 
+        // else {
         //     echo 'query error: ' . mysqli_error($conn);
         // }
-
-        if ($stmt->execute([':full_name' => '$full_name', ':email' => '$email', ':phone' => '$phone', ':social_account' => '$social_account', ':skills' => '$skills', ':user_profile' => '$user_profile', ':education' => '$education', ':experience' => '$experience'])) {
-            $message = 'data inserted successfully';
-          }
     }
 } //end POST check
 
