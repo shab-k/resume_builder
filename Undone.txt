@@ -1,10 +1,14 @@
 - Design problems + typography
-- Responsiveness
-- Edit CV
-- Form & regex
+- Form & Regex
 - Upload photo
 - PDO
-- Git
+- Edit CV
+- Responsiveness
+- Clean + delete undone text file
 - Deploy
 - Github
-- Updating portfolio
+- Update portfolio
+--------------------------------------------------
+Apr. 10 2020:
+===============
+- Git
