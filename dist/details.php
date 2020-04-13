@@ -79,6 +79,9 @@ if (isset($_GET['id'])) {
     <input class="btn btn--sm" type="submit" name="delete" value="Delete" class="btn btn--sm">
 </form>
 
+<a class="btn btn--sm" href="edit.php?id=<?= $resume->id ?>">Edit</a>
+
+
 <?php include('templates/footer.php'); ?>
 
 </html>

@@ -2,7 +2,7 @@
 - Form & Regex
 - Upload photo
 - Fix footer
-- Edit CV
+
 - Responsiveness
 - Clean + delete undone text file
 - Deploy
@@ -13,3 +13,6 @@ Apr. 10 2020:
 ===============
 - Git
 - PDO
+Apr. 13 2020:
+===============
+- Edit CV

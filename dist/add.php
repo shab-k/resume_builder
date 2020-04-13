@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) {
     if (empty($_POST['user_profile'])) {
         $errors['user_profile'] =  'user_profile is required <br />';
     } else {
-        // $user_profile = $_POST['user_profile'];
+        $user_profile = $_POST['user_profile'];
         // if (!preg_match('/^[a-zA-Z\s]+$/', $user_profile)) {
         //     $errors['user_profile'] = 'profile must be in letters & spaces only!';
         // }
