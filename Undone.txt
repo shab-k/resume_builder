@@ -1,9 +1,10 @@
 - Design problems + typography
 - Form & Regex
+- Color palette
 - Upload photo
 - Fix footer
-
 - Responsiveness
+
 - Clean + delete undone text file
 - Deploy
 - Github

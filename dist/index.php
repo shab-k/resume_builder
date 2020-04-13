@@ -24,7 +24,9 @@ $resumes = $stmt->fetchAll();
 		<div class="card">
 
 			<div class="grid-area card-image">
-				<img src="images/resume.jpg" class="resume">
+				<!-- <img src="images/resume.jpg" class="resume"> -->
+				<img src="uploads/<?= $resume->profile_photo ?>" class="resume">
+
 			</div>
 
 			<div class="grid-area card-content">

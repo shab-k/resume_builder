@@ -35,7 +35,8 @@ if (isset($_GET['id'])) {
             <div><?= $resume->full_name ?></div>
         </section>
         <section class="grid-area photo">
-            <img src="./images/8biticon.jpg" alt="">
+            <!-- <img src="./images/8biticon.jpg" alt=""> -->
+            <img src="uploads/<?= $resume->profile_photo ?>" class="resume">
         </section>
         <section class="grid-area contact">
             <h4>Contact</h4>

@@ -6,6 +6,38 @@ $full_name = $email = $phone = $social_account = $skills = $user_profile = $educ
 $errors = array('full_name' => '', 'email' => '', 'phone' => '', 'social_account' => '', 'skills' => '', 'user_profile' => '', 'education' => '', 'experience' => '');
 // form validation
 if (isset($_POST['submit'])) {
+    //Photo upload
+    // $file = $_FILES['file'];
+
+    $fileName = $_FILES['file']['name'];
+    $fileTmpName = $_FILES['file']['tmp_name'];
+    $fileSize = $_FILES['file']['size'];
+
+    // $fileErr = $_FILES['file']['err'];
+    // $fileType = $_FILES['file']['type'];
+
+    // $fileExt = explode('.', $fileName);
+    $upload_dir = 'uploads/';
+    $fileActualExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+    $allowed_extensions = array('jpg', 'jpeg', 'png');
+    $profile_photo = rand(1000, 1000000) . "." . $fileActualExt;
+    move_uploaded_file($fileTmpName, $upload_dir . $profile_photo);
+    //check photo
+    // if (in_array($fileActualExt, $allowed)) {
+    //     if ($fileErr === 0) {
+    //         if ($fileSize < 1000000) {
+    //             $fileNameNew = uniqid('', true) . "." . $fileActualExt;
+    //             $fileDestination = 'uploads/' . $fileNameNew;
+    //             move_uploaded_file($fileTmpName, $fileDestination);
+    //         } else {
+    //             echo 'your file is too big!';
+    //         }
+    //     } else {
+    //         echo 'There is an error uploading your photo!';
+    //     }
+    // } else {
+    //     echo 'you can not upload photos of this type!';
+    // }
 
     // check full_name
     if (empty($_POST['full_name'])) {
@@ -87,16 +119,16 @@ if (isset($_POST['submit'])) {
     if (array_filter($errors)) {
         echo 'errors in form';
     } else {
-       // create sql
-        $sql = "INSERT INTO resumes(full_name, email, phone, social_account, skills, user_profile, education, experience ) VALUES(:full_name, :email, :phone, :social_account, :skills, :user_profile, :education, :experience)";
+        // create sql
+        $sql = "INSERT INTO resumes(profile_photo, full_name, email, phone, social_account, skills, user_profile, education, experience ) VALUES(:profile_photo, :full_name, :email, :phone, :social_account, :skills, :user_profile, :education, :experience)";
         $stmt = $pdo->prepare($sql);
 
         // echo 'Post Added';
 
-        if ($stmt->execute([':full_name' => $full_name, ':email' => $email, ':phone' => $phone, ':social_account' => $social_account, ':skills' => $skills, ':user_profile' => $user_profile, ':education' => $education, ':experience' => $experience])) {
+        if ($stmt->execute([':profile_photo' => $profile_photo, ':full_name' => $full_name, ':email' => $email, ':phone' => $phone, ':social_account' => $social_account, ':skills' => $skills, ':user_profile' => $user_profile, ':education' => $education, ':experience' => $experience])) {
             // $message = 'data inserted successfully';
             header('Location: index.php');
-        } 
+        }
         // else {
         //     echo 'query error: ' . mysqli_error($conn);
         // }
@@ -109,7 +141,7 @@ if (isset($_POST['submit'])) {
 <html>
 <?php include('templates/header.php'); ?>
 
-<form class="" action="add.php" method="POST">
+<form class="" action="add.php" method="POST" enctype="multipart/form-data">
     <div class="wrapper">
         <section class="grid-area full_name">
             <h4>Full Name:</h4>
@@ -118,7 +150,9 @@ if (isset($_POST['submit'])) {
             <div class="error-message"><?php echo $errors['full_name']; ?></div>
         </section>
         <section class="grid-area photo">
-            <img src="./images/8biticon.jpg" alt="">
+            <!-- <img src="./images/8biticon.jpg" alt=""> -->
+            <label for="photo"></label>
+            <input type="file" name="file" value="<?php echo htmlspecialchars($full_name) ?>">
         </section>
         <section class="grid-area contact">
             <h4>Contact</h4>
