@@ -2,7 +2,36 @@
 
 include('config/db_connect.php');
 
+// check GET request id param
+if (isset($_GET['id'])) {
+
+    $id = $_GET['id'];
+    $sql = 'SELECT * FROM resumes WHERE id = :id';
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['id' => $id]);
+    $resume = $stmt->fetch();
+    // extract($resume);
+}
+
+
 if (isset($_POST['submit'])) {
+    //photo edit
+    $fileName = $_FILES['file']['name'];
+    $fileTmpName = $_FILES['file']['tmp_name'];
+    $fileSize = $_FILES['file']['size'];
+
+    // $fileErr = $_FILES['file']['err'];
+    // $fileType = $_FILES['file']['type'];
+
+    // $fileExt = explode('.', $fileName);
+    $upload_dir = 'uploads/';
+    $fileActualExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+    $allowed_extensions = array('jpg', 'jpeg', 'png');
+    $profile_photo = rand(1000, 1000000).".".$fileActualExt;
+    unlink($upload_dir.$resume->profile_photo);
+    move_uploaded_file($fileTmpName, $upload_dir.$profile_photo);
+
+    //////////////////
     $id = $_POST['id'];
     $full_name = $_POST['full_name'];
     $email = $_POST['email'];
@@ -13,24 +42,16 @@ if (isset($_POST['submit'])) {
     $education = $_POST['education'];
     $experience = $_POST['experience'];
 
-    $sql = "UPDATE resumes SET full_name=:full_name, email=:email, phone=:phone, social_account=:social_account, skills=:skills, user_profile=:user_profile, education=:education, experience=:experience WHERE id=:id";
+    $sql = "UPDATE resumes SET profile_photo=:profile_photo, full_name=:full_name, email=:email, phone=:phone, social_account=:social_account, skills=:skills, user_profile=:user_profile, education=:education, experience=:experience WHERE id=:id";
     $stmt = $pdo->prepare($sql);
-    if ($stmt->execute([':id' => $id, ':full_name' => $full_name, ':email' => $email, ':phone' => $phone, ':social_account' => $social_account, ':skills' => $skills, ':user_profile' => $user_profile, ':education' => $education, ':experience' => $experience])) {
+    if ($stmt->execute([':id' => $id, ':profile_photo' => $profile_photo, ':full_name' => $full_name, ':email' => $email, ':phone' => $phone, ':social_account' => $social_account, ':skills' => $skills, ':user_profile' => $user_profile, ':education' => $education, ':experience' => $experience])) {
         header('Location: index.php');
     }
     // if ($stmt->execute(['id' => $id])) {
     //     header('Location: index.php');
     // }
-}
 
-// check GET request id param
-if (isset($_GET['id'])) {
-
-    $id = $_GET['id'];
-    $sql = 'SELECT * FROM resumes WHERE id = :id';
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute(['id' => $id]);
-    $resume = $stmt->fetch();
+ 
 }
 
 ?>
@@ -40,14 +61,18 @@ if (isset($_GET['id'])) {
 <?php include('templates/header.php'); ?>
 
 <!-- <form method="POST"> -->
-<form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
+<form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
     <div class="wrapper">
         <section class="grid-area full_name">
             <h4>Full Name:</h4>
             <input type="text" name="full_name" value="<?= $resume->full_name ?>">
         </section>
         <section class="grid-area photo">
-            <img src="./images/8biticon.jpg" alt="">
+            <!-- <img src="./images/8biticon.jpg" alt=""> -->
+            <!-- <img src="uploads/<?= $resume->profile_photo ?>" class="resume"> -->
+            <!-- <input type="file" name="file" class="form-control" required="" accept="*/image"> -->
+            <label for="photo"></label>
+            <input type="file" name="file" accept="*/image" value="<?php echo htmlspecialchars($profile_photo) ?>">
         </section>
         <section class="grid-area contact">
             <h4>Contact</h4>
