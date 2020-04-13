@@ -33,6 +33,7 @@ if (isset($_POST['submit'])) {
 
     //////////////////
     $id = $_POST['id'];
+    // $profile_photo = $_POST['profile_photo'];
     $full_name = $_POST['full_name'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
@@ -69,10 +70,12 @@ if (isset($_POST['submit'])) {
         </section>
         <section class="grid-area photo">
             <!-- <img src="./images/8biticon.jpg" alt=""> -->
-            <!-- <img src="uploads/<?= $resume->profile_photo ?>" class="resume"> -->
+            <img src="uploads/<?= $resume->profile_photo ?>" class="resume">
+            <!-- <img src="uploads/<?php echo $picProfile; ?>" class="img-rounded"> -->
             <!-- <input type="file" name="file" class="form-control" required="" accept="*/image"> -->
             <label for="photo"></label>
             <input type="file" name="file" accept="*/image" value="<?php echo htmlspecialchars($profile_photo) ?>">
+            <!-- <input type="file" name="file" accept="*/image" value="<?= $resume->profile_photo ?>"> -->
         </section>
         <section class="grid-area contact">
             <h4>Contact</h4>

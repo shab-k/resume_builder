@@ -150,7 +150,9 @@ if (isset($_POST['submit'])) {
             <div class="error-message"><?php echo $errors['full_name']; ?></div>
         </section>
         <section class="grid-area photo">
-            <!-- <img src="./images/8biticon.jpg" alt=""> -->
+            <!-- <div class="photo_placeholder">
+                <img src="./images/person-placeholder.png" alt="">
+            </div> -->
             <label for="photo"></label>
             <input type="file" name="file" value="<?php echo htmlspecialchars($profile_photo) ?>">
         </section>
