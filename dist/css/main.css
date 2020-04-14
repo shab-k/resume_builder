@@ -49,7 +49,7 @@ ul, ol, dl, dd,
 figure, blockquote, details, hr,
 fieldset, pre, table, caption,
 menu {
-  margin: 0 0 0.7rem;
+  margin: 0 0 0.6rem;
 }
 
 .yotta {
@@ -430,6 +430,7 @@ i {
 .cards-title {
   text-align: center;
   text-transform: uppercase;
+  margin-top: 15px;
 }
 
 .card-container {
@@ -440,7 +441,7 @@ i {
   grid-gap: 10px;
   width: 60%;
   max-width: 1200px;
-  margin: 10px auto;
+  margin: 0 auto;
   padding: 10px;
 }
 

@@ -16,7 +16,7 @@ $resumes = $stmt->fetchAll();
 <!-- Photos by 8biticon.com -->
 <?php include('templates/header.php'); ?>
 
-<h4 class="cards-title">Resumes!</h4>
+<h1 class="cards-title">Resumes!</h1>
 
 <div class="card-container">
 	<?php foreach ($resumes as $resume) { ?>
