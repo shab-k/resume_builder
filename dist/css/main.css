@@ -646,6 +646,21 @@ input {
   text-align: center;
 }
 
+.photo-detail,
+.full-name-detail {
+  min-height: 190px;
+}
+
+.contact-detail,
+.skills-detail {
+  min-height: 400px;
+}
+
+.profile-detail,
+.main-detail {
+  min-height: 500px;
+}
+
 html {
   font-size: 100%;
   line-height: 1.2;
@@ -686,6 +701,17 @@ html {
   }
 }
 
+@media (max-width: 1199.98px) {
+  .card-container {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+}
+
 @media (max-width: 991.98px) {
   .card-container {
     -ms-grid-columns: (1fr)[2];
@@ -712,6 +738,17 @@ html {
   .card-container {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 319.98px) {
+  .card-container {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;

@@ -1,3 +1,15 @@
 .resume-date {
     text-align: center;
 }
+.photo-detail,
+.full-name-detail {
+    min-height: 190px;
+}
+.contact-detail,
+.skills-detail {
+    min-height: 400px;
+}
+.profile-detail,
+.main-detail {
+    min-height: 500px;
+}

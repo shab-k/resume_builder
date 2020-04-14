@@ -30,14 +30,14 @@ if (isset($_GET['id'])) {
 
 <div class="wrapper">
     <?php if ($resume) : ?>
-        <section class="grid-area full_name">
-            <div><?= $resume->full_name ?></div>
+        <section class="grid-area full_name full_name-detail">
+            <h1 class="yotta"><?= $resume->full_name ?></h1>
         </section>
-        <section class="grid-area photo">
+        <section class="grid-area photo photo-detail">
             <!-- <img src="./images/8biticon.jpg" alt=""> -->
             <img src="uploads/<?= $resume->profile_photo ?>" class="resume">
         </section>
-        <section class="grid-area contact">
+        <section class="grid-area contact contact-detail">
             <h4>Contact</h4>
             <hr>
             <i class="fas fa-envelope"></i>
@@ -49,17 +49,17 @@ if (isset($_GET['id'])) {
             <i class="fab fa-linkedin"></i>
             <div><?= $resume->social_account ?></div>
         </section>
-        <section class="grid-area skills">
+        <section class="grid-area skills skills-detail">
             <h4>Skills</h4>
             <hr>
             <div><?= $resume->skills ?></div>
         </section>
-        <section class="grid-area profile">
+        <section class="grid-area profile profile-detail">
             <h4>Profile</h4>
             <hr>
             <div><?= $resume->user_profile ?></div>
         </section>
-        <section class="grid-area main">
+        <section class="grid-area main main-detail">
             <h4>Education</h4>
             <hr>
             <div><?= $resume->education ?></div>
