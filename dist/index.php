@@ -40,7 +40,7 @@ $resumes = $stmt->fetchAll();
 			</div>
 
 			<div class="grid-area card-action">
-				<a href="details.php?id=<?= $resume->id ?>">Details<i class="fas fa-long-arrow-alt-right"></i></a>
+				<a href="details.php?id=<?= $resume->id ?>"><span class="nano">Details</span><i class="fas fa-long-arrow-alt-right"></i></a>
 			</div>
 		</div>
 
