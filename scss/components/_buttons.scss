@@ -3,15 +3,13 @@ button,
 	display: inline-block;
 	vertical-align: middle;
 	width: auto;
-	// padding: $base-spacing;
-	// padding: 0.75rem 1.5rem;
-	margin: 0 0 $base-spacing;
+	margin: 10px auto;
 	background-color: $secondary__accent-color;
 	color: $white;
 	font-weight: bold;
 	white-space: nowrap;
 	transition: all $base-transition-duration $base-transition-timing;
-	// cursor: pointer;
+	cursor: pointer;
     border-radius: $base__border-radius;
     // border: 3px solid #333;
 	box-shadow: $base__box-shadow;
@@ -28,46 +26,46 @@ btn:focus {
 	box-shadow: $hover-box-shadow;
 }
 
-.btn--light {
-	background-color: darken($base__background-color, 10%);
-	color: $base__accent-color;
+// .btn--light {
+// 	background-color: darken($base__background-color, 10%);
+// 	color: $base__accent-color;
 	
-	&:hover,
-	&:focus {
-		background-color: darken($base__background-color, 20%);
-		color: darken($base__accent-color, 10%);
-	}
-}
+// 	&:hover,
+// 	&:focus {
+// 		background-color: darken($base__background-color, 20%);
+// 		color: darken($base__accent-color, 10%);
+// 	}
+// }
 
-.btn--dark {
-	background-color: $base__font-color;
+// .btn--dark {
+// 	background-color: $base__font-color;
 	
-	&:hover,
-	&:focus {
-		background-color: darken($base__font-color, 90%);
-	}
-}
+// 	&:hover,
+// 	&:focus {
+// 		background-color: darken($base__font-color, 90%);
+// 	}
+// }
 
-.btn--secondary {
-	background-color: $secondary__accent-color;
+// .btn--secondary {
+// 	background-color: $secondary__accent-color;
 	
-	&:hover,
-	&:focus {
-		background-color: darken($secondary__accent-color, 20%);
-	}
-}
-.btn--secondary-outline {
-	background-color: $color-off-white;
-	border-color: $secondary__accent-color;
-	color: $secondary__accent-color;
+// 	&:hover,
+// 	&:focus {
+// 		background-color: darken($secondary__accent-color, 20%);
+// 	}
+// }
+// .btn--secondary-outline {
+// 	background-color: $color-off-white;
+// 	border-color: $secondary__accent-color;
+// 	color: $secondary__accent-color;
 	
-	&:hover,
-	&:focus {
-		// background-color: darken($secondary-accent-color, 10%);
-		background-color: $secondary__accent-color;
-		color: $color-off-white;
-	}
-}
+// 	&:hover,
+// 	&:focus {
+// 		// background-color: darken($secondary-accent-color, 10%);
+// 		background-color: $secondary__accent-color;
+// 		color: $color-off-white;
+// 	}
+// }
 
 // .btn--alert {
 // 	background-color: $base__alert-color;

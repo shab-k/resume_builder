@@ -44,4 +44,9 @@ a {
   transition: color $base-transition-duration $base-transition-timing;
   text-decoration: none;
 }
-
+.center-align {
+  text-align: center;
+}
+.center-item {
+  margin: 0 auto;
+}

@@ -8,12 +8,14 @@ i {
     padding-left: 5px;
     vertical-align: middle;
 }
+
 // cards
 .cards-title {
     text-align: center;
     text-transform: uppercase;
     margin-top: 15px;
 }
+
 .card-container {
     // background-color: #ece7e7;
     display: grid;
@@ -58,14 +60,16 @@ i {
     background-color: $mid-grey;
     display: flex;
 }
+
 .card .card-image {
     padding: 0;
 }
+
 .card .card-content,
-.card .card-action
- {
+.card .card-action {
     padding: 10px;
 }
+
 .card-content {
     grid-area: card-content;
     background: $white;
@@ -81,3 +85,4 @@ i {
     font-weight: bold;
 
 }
+

@@ -1,7 +1,8 @@
-- Design problems + typography
 - Form & Regex
 - burger menu
-
+- edit page
+- button size
+- sass resp problem
 
 - Clean + delete undone text file
 - Deploy
@@ -11,6 +12,7 @@
 Future Feature:
 - Color palette
 - Ask prmsn for delete
+- Link colors
 ------------------------------------------------------------
 Done:
 ------
@@ -31,4 +33,5 @@ Apr. 14 2020:
 ===============
 - Fixed the issue of editing either text or photo
 - Fix footer
-- Responsiveness 
+- Responsiveness
+- Design problems + typography

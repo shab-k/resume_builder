@@ -140,10 +140,11 @@ if (isset($_POST['submit'])) {
     </div>
 
     <!-- EDIT FORM -->
-    <form method="POST" class="submit">
+    <div class="submit">
         <input type="hidden" name="id" value="<?= $resume->id ?>">
-        <input class="btn btn--sm" type="submit" name="submit" value="Submit" class="btn btn--sm">
-    </form>
+        <button class="btn btn--sm" type="submit" name="submit" value="Submit" class="btn btn--sm">Edit</button>
+        <!-- <input class="btn btn--sm submit" type="submit" name="submit" value="Submit" class="btn btn--sm"> -->
+    </div>
 </form>
 
 

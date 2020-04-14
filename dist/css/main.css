@@ -38,6 +38,14 @@ a {
   text-decoration: none;
 }
 
+.center-align {
+  text-align: center;
+}
+
+.center-item {
+  margin: 0 auto;
+}
+
 body {
   font-family: 'Roboto Mono', monospace;
   word-spacing: -4px;
@@ -182,13 +190,14 @@ button,
   display: inline-block;
   vertical-align: middle;
   width: auto;
-  margin: 0 0 1rem;
+  margin: 10px auto;
   background-color: #0b0c0c;
   color: #fff;
   font-weight: bold;
   white-space: nowrap;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
   border-radius: 2rem;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
@@ -202,43 +211,6 @@ btn:focus {
   color: #EEE9E4;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
           box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
-}
-
-.btn--light {
-  background-color: #dad0c5;
-  color: #1f775a;
-}
-
-.btn--light:hover, .btn--light:focus {
-  background-color: #c7b6a5;
-  color: #144f3b;
-}
-
-.btn--dark {
-  background-color: black;
-}
-
-.btn--dark:hover, .btn--dark:focus {
-  background-color: black;
-}
-
-.btn--secondary {
-  background-color: #0b0c0c;
-}
-
-.btn--secondary:hover, .btn--secondary:focus {
-  background-color: black;
-}
-
-.btn--secondary-outline {
-  background-color: #EEE9E4;
-  border-color: #0b0c0c;
-  color: #0b0c0c;
-}
-
-.btn--secondary-outline:hover, .btn--secondary-outline:focus {
-  background-color: #0b0c0c;
-  color: #EEE9E4;
 }
 
 /* button size */
@@ -429,6 +401,7 @@ hr {
 
 .submit {
   text-align: center;
+  margin: 0 auto;
 }
 
 textarea {
