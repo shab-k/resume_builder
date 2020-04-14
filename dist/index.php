@@ -34,7 +34,7 @@ $resumes = $stmt->fetchAll();
 				<!-- <h6></h6> -->
 				<h5><?= $resume->full_name ?></h5>
 				<div>
-					<h6 class="resume-date">Created At:</h6>
+					<h6>Created At:</h6>
 					<p class="nano"><?= $resume->created_at ?></p>
 				</div>
 			</div>

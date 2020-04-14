@@ -1,137 +1,68 @@
 // p, ul, dl, a {
 //     @include font-size($p-font-sizes);
 //   }
-html{
-    @include font-size($html-font-sizes);
-}
-@include media-xs {
-    // html {
-    //     font-size: 80%;
-    //     line-height: 1.2;
-    // }
-    // .btn {
-    //     color: rgb(255, 0, 0);
-    //     font-size: .5rem;
-    // }  
+html {
+  @include font-size($html-font-sizes);
 }
 
-@include media-sm {
-    // html {
-    //     font-size: 110%;
-    //     line-height: 1.4;
-    // }
+// @include media-max-xl {
+//   .card-container {
+//     // display: grid;
+//     grid-template-columns: repeat(3, 1fr);
+//     // grid-gap: 10px;
+//     width: 80%;
+//     max-width: 1200px;
+//     margin: 0 auto;
+//     padding: 10px;
 
-    // .container {
-    //     max-width: 90%;
-    // }
+//   }
 
-    .media__list--item {
-        width: 33.3333%;
-    }
+// }
+@include media-max-lg {
+  .card-container {
+    // display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    // grid-gap: 10px;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
 
-    .media__list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
+  }
 
-    .media--object {
-        flex-wrap: nowrap;
-        margin: 0 $base-spacing $base-spacing 0; //faghat male reverse?
-    }
-
-    .media__item--reversed {
-        order: 1;
-        margin: 0 0 $base-spacing $base-spacing;
-    }
-    // .btn {
-    //     color: rgb(0, 255, 64);
-    //     font-size: .9rem;
-    // }
-}
-
-@include media-md {
-
-    // html {
-    //     font-size: 115%;
-    //     line-height: 1.45;
-    // }
-
-    .media {
-        margin: 0 0 $base-spacing*2;
-    }
-
-    // .btn {
-    //     color: rgb(26, 247, 228);
-    // }
-    
 }
 @include media-max-md {
+  .card-container {
+    // display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    // grid-gap: 10px;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+  }
 
-    .menu-btn {
-        display: block;
-      }
-    
-      .menu-btn:hover {
-        opacity: 0.5;
-      }
-    
-      .main-nav ul.right-menu {
-        margin-right: 50px;
-      }
-    
-      .main-nav ul.main-menu {
-        display: block;
-        position: absolute;
-        top:0;
-        left: 0;
-        background: #000;
-        width: 50%;
-        height: 100%;
-        border-right: #ccc 1px solid;
-        opacity: 0.9;
-        padding: 30px;
-        transform: translateX(-500px);
-        transition: transform 0.5s ease-in-out;
-      }
-    
-      .main-nav ul.main-menu li {
-        padding: 10px;
-        border-bottom: #ccc solid 1px;
-        font-size: 14px;
-      }
-    
-      .main-nav ul.main-menu li:last-child {
-        border-bottom: 0;
-      }
-    
-      .main-nav ul.main-menu.show {
-        transform: translateX(-20px);
-      }
-    
 }
+@include media-max-sm {
+  .card-container {
+    // display: grid;
+    grid-template-columns: 1fr;
+    // grid-gap: 10px;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+  }
 
-@include media-lg {
-
-    // html {
-    //     font-size: 120%;
-    //     line-height: 1.5;
-    // }
-    .container {
-        max-width: 70%;
-    }
-    // .btn {
-    //     color: rgb(255, 0, 242);
-    // }
 }
-
-@include media-xl {
-    
-    // html {
-    //     font-size: 130%;
-    //     line-height: 1.5;
-    // }
-    //   .btn {
-    //     color: rgb(255, 208, 0);
-    // }
+@include media-max-xs {
+  // .card-container {
+  //   // display: grid;
+  //   grid-template-columns: repeat(1, 1fr);
+  //   // grid-gap: 10px;
+  //   width: 80%;
+  //   max-width: 1200px;
+  //   margin: 0 auto;
+  //   padding: 10px;
+  //}
 }

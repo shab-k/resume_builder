@@ -31,7 +31,6 @@ if (isset($_GET['id'])) {
 <div class="wrapper">
     <?php if ($resume) : ?>
         <section class="grid-area full_name">
-            <h4>Full Name:</h4>
             <div><?= $resume->full_name ?></div>
         </section>
         <section class="grid-area photo">
@@ -78,9 +77,10 @@ if (isset($_GET['id'])) {
 <form action="details.php" method="POST" class="submit">
     <input type="hidden" name="id_to_delete" value="<?= $resume->id ?>">
     <input class="btn btn--sm" type="submit" name="delete" value="Delete" class="btn btn--sm">
+
+    <a class="btn btn--sm" href="edit.php?id=<?= $resume->id ?>">Edit</a>
 </form>
 
-<a class="btn btn--sm" href="edit.php?id=<?= $resume->id ?>">Edit</a>
 
 
 <?php include('templates/footer.php'); ?>

@@ -1,5 +1,4 @@
 .wrapper {
-    // grid-auto-rows: minmax(100px, auto);
     max-width: 960px;
     margin: 10px auto;
     display: grid;
@@ -10,14 +9,8 @@
     // grid-gap: 5px;
     grid-template-areas:
         "photo full_name"
-        // "photo full_name"
         "contact skills"
-        // "contact skills"
-        // "contact skills"
         "profile main"
-        // "profile main"
-        // "profile main"
-
 }
 
 .grid-area {
@@ -117,12 +110,6 @@ input {
     border-color: transparent;
     border-bottom: 1px solid $secondary__accent-color;
 }
-
-.submit input {
-    border: 2px solid $secondary__accent-color;
-    border-radius: 2rem;
-}
-
 .error-message {
     color: $base__alert-color;
 }

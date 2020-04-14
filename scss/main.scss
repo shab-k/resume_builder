@@ -8,8 +8,7 @@
   
 // Vendors
 @import
-  'vendors/fontawesome',
-  'vendors/bootstrap';
+  'vendors/fontawesome';
 
 // Base stuff
 @import
@@ -36,8 +35,7 @@
 @import
   'pages/home',
   'pages/resume',
-  'pages/add'
-  ;
+  'pages/details';
   
 // Media Queries
 @import 'abstracts/responsive'; //The order is important!!!';
