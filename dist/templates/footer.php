@@ -1,6 +1,5 @@
 	<footer>
-		<ul class="footer__links">
-			<li>&copy; Copyright 2020</li>
-		</ul>
+		<p><i class="far fa-copyright"></i> Copyright 2020 - </p>
+		<p>Made With <i class="fas fa-heart" style="color:#a5043a"></i> By Shabnam</p>
 	</footer>
-</body>
+	</body>

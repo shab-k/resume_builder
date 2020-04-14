@@ -13,7 +13,7 @@ $resumes = $stmt->fetchAll();
 
 <!DOCTYPE html>
 <html>
-
+<!-- Photos by 8biticon.com -->
 <?php include('templates/header.php'); ?>
 
 <h4 class="cards-title">Resumes!</h4>

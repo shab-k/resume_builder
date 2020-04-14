@@ -110,7 +110,7 @@ small,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #444444;
+  background-color: #444;
 }
 
 .main-nav ul {
@@ -153,14 +153,18 @@ small,
 }
 
 footer {
-  background: #444444;
+  background: #444;
   color: #fff;
   padding: 10px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  text-align: center;
 }
 
-footer ul {
+footer p {
+  display: inline-block;
   margin: 0 auto;
-  text-align: center;
 }
 
 button,

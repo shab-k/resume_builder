@@ -1,6 +1,5 @@
 - Design problems + typography
 - Form & Regex
-- Fix footer
 - Responsiveness + burger menu
 
 
@@ -11,9 +10,13 @@
 
 Future Feature:
 - Color palette
+- Ask prmsn for delete
 ------------------------------------------------------------
 Done:
 ------
+Apr. ?? 2020:
+===============
+- Basic Structure 
 Apr. 10 2020:
 ===============
 - Git
@@ -27,3 +30,4 @@ Apr. 13 2020:
 Apr. 14 2020:
 ===============
 - Fixed the issue of editing either text or photo
+- Fix footer
