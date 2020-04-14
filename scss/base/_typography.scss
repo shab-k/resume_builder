@@ -7,7 +7,7 @@ body {
   color: $base__font-color;
 }
 
-// 1.125em
+// Type Scale: 1.067em
 h1, h2, h3, h4, h5, h6, p,
 ul, ol, dl, dd,
 figure, blockquote, details, hr,
@@ -28,31 +28,31 @@ menu {
 
 h1,
 .exa {
-  font-size: 1.802rem;
-  line-height: 2.625rem;
+  font-size: 1.383rem;
+  line-height: 1.8rem;
 }
 
 h2,
 .peta {
-  font-size: 1.6018rem;
-  line-height: 2.25rem;
+  font-size: 1.2962rem;
+  line-height: 1.8rem;
 }
 
 h3,
 .tera {
-  font-size: 1.4238rem;
-  line-height: 1.875rem;
+  font-size: 1.2148rem;
+  line-height: 1.8rem;
 }
 
 h4,
 .giga {
-  font-size: 1.2656rem;
-  line-height: 1.875rem;
+  font-size: 1.1385rem;
+  line-height: 1.5rem;
 }
 
 h5,
 .mega {
-  font-size: 1.125rem;
+  font-size: 1.067rem;
   line-height: 1.5rem;
 }
 
@@ -66,7 +66,17 @@ textarea {
 
 small,
 .milli {
-  font-size: .8rem;
+  font-size: .9372rem;
   line-height: 1.5rem;
+}
+
+.micro {
+  font-size: .8784rem;
+  line-height: 1.2rem;
+}
+
+.nano {
+  font-size: .8232rem;
+  line-height: 1.2rem;
 }
 
