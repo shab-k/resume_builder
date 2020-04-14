@@ -8,9 +8,6 @@ $errors = array('profile_photo' => '', 'full_name' => '', 'email' => '', 'phone'
 if (isset($_POST['submit'])) {
     //Photo upload
     // $file = $_FILES['file'];
-
-
-
     $imgFile = $_FILES['user_image']['name'];
     $fileTmpName = $_FILES['user_image']['tmp_name'];
     $imgSize = $_FILES['user_image']['size'];
@@ -19,9 +16,8 @@ if (isset($_POST['submit'])) {
 
     //check profile photo
     if (empty($imgFile)) {
-        $errors['profile_photo'] = 'Profile photo is required <br />';
+        $errors['profile_photo'] = 'Photo is required <br />';
     } else {
-        // $profile_photo = $_POST['profile_photo'];
         $upload_dir = 'uploads/';
         $imgExt = strtolower(pathinfo($imgFile, PATHINFO_EXTENSION));
         $allowed_extensions = array('jpg', 'jpeg', 'png');
@@ -99,7 +95,7 @@ if (isset($_POST['submit'])) {
     }
     // check user_profile
     if (empty($_POST['user_profile'])) {
-        $errors['user_profile'] =  'user_profile is required <br />';
+        $errors['user_profile'] =  'Profile text is required <br />';
     } else {
         $user_profile = $_POST['user_profile'];
         // if (!preg_match('/^[a-zA-Z\s]+$/', $user_profile)) {
@@ -125,9 +121,9 @@ if (isset($_POST['submit'])) {
         // }
     }
 
-    if (array_filter($errors)) {
-        echo 'errors in form';
-    } else {
+    if (!array_filter($errors)) {
+    //     echo 'errors in form';
+    // } else {
         // create sql
         $sql = "INSERT INTO resumes(profile_photo, full_name, email, phone, social_account, skills, user_profile, education, experience ) VALUES(:profile_photo, :full_name, :email, :phone, :social_account, :skills, :user_profile, :education, :experience)";
         $stmt = $pdo->prepare($sql);
@@ -169,7 +165,7 @@ if (isset($_POST['submit'])) {
             </div> -->
             <label for="photo"></label>
             <input class="nano" type="file" name="user_image" value="<?php echo htmlspecialchars($profile_photo) ?>">
-            <!-- <div class="error-message"><?php echo $errors['profile_photo']; ?></div> -->
+            <div class="error-message"><?php echo $errors['profile_photo']; ?></div>
 
         </section>
         <section class="grid-area contact">
