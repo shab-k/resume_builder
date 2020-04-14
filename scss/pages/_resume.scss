@@ -41,8 +41,6 @@
     grid-area: full_name;
     display: flex;
     align-items: center;
-    text-align: center;
-    justify-content: center;
 }
 
 .contact {
@@ -91,7 +89,9 @@ hr {
 .submit {
     text-align: center;
 }
-
+textarea {
+    width: 89%;
+}
 textarea,
 input {
     background-color: #e7e8e9;
@@ -101,7 +101,16 @@ input {
 .profile textarea {
     background-color: $base__accent-color;
 }
-
+input[type=file] {
+    width: 90%;
+    margin: 20px;
+}
+input[name=full_name] {
+    margin-left: 10px;
+}
+.contact input {
+    width: 80%;
+}
 
 input {
     border: none;

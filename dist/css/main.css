@@ -41,6 +41,7 @@ a {
 
 body {
   font-family: 'Roboto Mono', monospace;
+  word-spacing: -4px;
   color: black;
 }
 
@@ -550,10 +551,6 @@ i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .contact {
@@ -606,6 +603,10 @@ hr {
   text-align: center;
 }
 
+textarea {
+  width: 89%;
+}
+
 textarea,
 input {
   background-color: #e7e8e9;
@@ -615,6 +616,19 @@ input {
 .contact input,
 .profile textarea {
   background-color: #1f775a;
+}
+
+input[type=file] {
+  width: 90%;
+  margin: 20px;
+}
+
+input[name=full_name] {
+  margin-left: 10px;
+}
+
+.contact input {
+  width: 80%;
 }
 
 input {

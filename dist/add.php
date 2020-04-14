@@ -168,7 +168,7 @@ if (isset($_POST['submit'])) {
                 <img src="./images/person-placeholder.png" alt="">
             </div> -->
             <label for="photo"></label>
-            <input type="file" name="user_image" value="<?php echo htmlspecialchars($profile_photo) ?>">
+            <input class="nano" type="file" name="user_image" value="<?php echo htmlspecialchars($profile_photo) ?>">
             <!-- <div class="error-message"><?php echo $errors['profile_photo']; ?></div> -->
 
         </section>
