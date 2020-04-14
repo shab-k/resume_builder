@@ -32,10 +32,10 @@ $resumes = $stmt->fetchAll();
 
 			<div class="grid-area card-content">
 				<!-- <h6></h6> -->
-				<h6><?= $resume->full_name ?></h6>
+				<h5><?= $resume->full_name ?></h5>
 				<div>
 					<h6 class="resume-date">Created At:</h6>
-					<p><?= $resume->created_at ?></p>
+					<p class="nano"><?= $resume->created_at ?></p>
 				</div>
 			</div>
 
