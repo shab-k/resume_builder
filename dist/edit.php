@@ -1,39 +1,24 @@
 <?php
-
+//  error_reporting( ~E_NOTICE ); //???
 include('config/db_connect.php');
-
+// $profile_photo = $full_name = $email = $phone = $social_account = $skills = $user_profile = $education = $experience = '';
 // check GET request id param
-if (isset($_GET['id'])) {
+if (isset($_GET['id']) && !empty($_GET['id'])) {
 
     $id = $_GET['id'];
     $sql = 'SELECT * FROM resumes WHERE id = :id';
     $stmt = $pdo->prepare($sql);
     $stmt->execute(['id' => $id]);
     $resume = $stmt->fetch();
+    // $resume = $stmt->fetch(PDO::FETCH_ASSOC);
     // extract($resume);
+} else {
+    header("Location: index.php");
 }
 
-
 if (isset($_POST['submit'])) {
-    //photo edit
-    $fileName = $_FILES['file']['name'];
-    $fileTmpName = $_FILES['file']['tmp_name'];
-    $fileSize = $_FILES['file']['size'];
 
-    // $fileErr = $_FILES['file']['err'];
-    // $fileType = $_FILES['file']['type'];
-
-    // $fileExt = explode('.', $fileName);
-    $upload_dir = 'uploads/';
-    $fileActualExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
-    $allowed_extensions = array('jpg', 'jpeg', 'png');
-    $profile_photo = rand(1000, 1000000).".".$fileActualExt;
-    unlink($upload_dir.$resume->profile_photo);
-    move_uploaded_file($fileTmpName, $upload_dir.$profile_photo);
-
-    //////////////////
     $id = $_POST['id'];
-    // $profile_photo = $_POST['profile_photo'];
     $full_name = $_POST['full_name'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
@@ -42,9 +27,46 @@ if (isset($_POST['submit'])) {
     $user_profile = $_POST['user_profile'];
     $education = $_POST['education'];
     $experience = $_POST['experience'];
+    //photo edit
+    $imgFile = $_FILES['user_image']['name'];
+    $fileTmpName = $_FILES['user_image']['tmp_name'];
+    $imgSize = $_FILES['user_image']['size'];
+    //check profile photo
+    if (empty($imgFile)) {
+        // if no image selected the old image remain as it is.
+        $profile_photo = $resume->profile_photo; // old image from database
+    } else {
+        $upload_dir = 'uploads/';
+        $imgExt = strtolower(pathinfo($imgFile, PATHINFO_EXTENSION));
+        $allowed_extensions = array('jpg', 'jpeg', 'png');
+        // rename uploading image
+        $profile_photo = rand(1000, 1000000) . "." . $imgExt;
 
+        if (in_array($imgExt, $allowed_extensions)) {
+            
+            if ($imgSize < 5000000) {
+                unlink($upload_dir . $resume->profile_photo);
+                move_uploaded_file($fileTmpName, $upload_dir.$profile_photo);
+            } else {
+                // echo 'your file is too big!';
+                $errors['profile_photo'] = 'Your file is too big! it should be less then 5MB.<br />';
+            }
+        } else {
+            // echo 'Only JPG, JPEG & PNG files are allowed.';
+            $errors['profile_photo'] = 'Only JPG, JPEG & PNG files are allowed.<br />';
+        }
+    }
+  
     $sql = "UPDATE resumes SET profile_photo=:profile_photo, full_name=:full_name, email=:email, phone=:phone, social_account=:social_account, skills=:skills, user_profile=:user_profile, education=:education, experience=:experience WHERE id=:id";
     $stmt = $pdo->prepare($sql);
+
+    // $stmt->bindParam(':profile_photo', $profile_photo);
+    // $stmt->bindParam(':uname', $username);
+    // $stmt->bindParam(':ujob', $userjob);
+    // $stmt->bindParam(':upic', $userpic);
+    // $stmt->bindParam(':uid', $id);
+
+   
     if ($stmt->execute([':id' => $id, ':profile_photo' => $profile_photo, ':full_name' => $full_name, ':email' => $email, ':phone' => $phone, ':social_account' => $social_account, ':skills' => $skills, ':user_profile' => $user_profile, ':education' => $education, ':experience' => $experience])) {
         header('Location: index.php');
     }
@@ -52,7 +74,7 @@ if (isset($_POST['submit'])) {
     //     header('Location: index.php');
     // }
 
- 
+
 }
 
 ?>
@@ -61,7 +83,6 @@ if (isset($_POST['submit'])) {
 <html>
 <?php include('templates/header.php'); ?>
 
-<!-- <form method="POST"> -->
 <form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
     <div class="wrapper">
         <section class="grid-area full_name">
@@ -69,13 +90,10 @@ if (isset($_POST['submit'])) {
             <input type="text" name="full_name" value="<?= $resume->full_name ?>">
         </section>
         <section class="grid-area photo">
-            <!-- <img src="./images/8biticon.jpg" alt=""> -->
             <img src="uploads/<?= $resume->profile_photo ?>" class="resume">
-            <!-- <img src="uploads/<?php echo $picProfile; ?>" class="img-rounded"> -->
-            <!-- <input type="file" name="file" class="form-control" required="" accept="*/image"> -->
             <label for="photo"></label>
-            <input type="file" name="file" accept="*/image" value="<?php echo htmlspecialchars($profile_photo) ?>">
-            <!-- <input type="file" name="file" accept="*/image" value="<?= $resume->profile_photo ?>"> -->
+            <!-- <input type="file" name="file" accept="image/*" value="<?php echo htmlspecialchars($profile_photo) ?>"> -->
+            <input type="file" name="user_image" accept="image/*" value="uploads/<?= $resume->profile_photo ?>">
         </section>
         <section class="grid-area contact">
             <h4>Contact</h4>

@@ -1,9 +1,9 @@
 <?php
-// $full_name = $email = $phone = $social_account = $skills = $user_profile = $education = $experience = '';
+// $profile_photo = $full_name = $email = $phone = $social_account = $skills = $user_profile = $education = $experience = '';
 include('config/db_connect.php');
 //--------------------------pdo ----------------------
 //   $sql = 'SELECT * FROM resumes WHERE full_name = ? && is_published = ? LIMIT ?';
-$sql = 'SELECT * FROM resumes ORDER BY created_at';
+$sql = 'SELECT * FROM resumes ORDER BY created_at DESC';
 $stmt = $pdo->prepare($sql);
 //   $stmt->execute([$full_name, $created_at]);
 $stmt->execute();
@@ -25,6 +25,7 @@ $resumes = $stmt->fetchAll();
 
 			<div class="grid-area card-image">
 				<!-- <img src="images/resume.jpg" class="resume"> -->
+				<!-- <img src="uploads/<?= $resume->profile_photo ?>" class="resume"> -->
 				<img src="uploads/<?= $resume->profile_photo ?>" class="resume">
 
 			</div>

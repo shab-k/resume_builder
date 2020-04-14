@@ -2,42 +2,51 @@
 
 include('config/db_connect.php');
 
-$full_name = $email = $phone = $social_account = $skills = $user_profile = $education = $experience = '';
-$errors = array('full_name' => '', 'email' => '', 'phone' => '', 'social_account' => '', 'skills' => '', 'user_profile' => '', 'education' => '', 'experience' => '');
+$profile_photo = $full_name = $email = $phone = $social_account = $skills = $user_profile = $education = $experience = '';
+$errors = array('profile_photo' => '', 'full_name' => '', 'email' => '', 'phone' => '', 'social_account' => '', 'skills' => '', 'user_profile' => '', 'education' => '', 'experience' => '');
 // form validation
 if (isset($_POST['submit'])) {
     //Photo upload
     // $file = $_FILES['file'];
 
-    $fileName = $_FILES['file']['name'];
-    $fileTmpName = $_FILES['file']['tmp_name'];
-    $fileSize = $_FILES['file']['size'];
 
-    // $fileErr = $_FILES['file']['err'];
+
+    $imgFile = $_FILES['user_image']['name'];
+    $fileTmpName = $_FILES['user_image']['tmp_name'];
+    $imgSize = $_FILES['user_image']['size'];
+    // $fileErr = $_FILES['file']['error'];
     // $fileType = $_FILES['file']['type'];
 
-    // $fileExt = explode('.', $fileName);
-    $upload_dir = 'uploads/';
-    $fileActualExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
-    $allowed_extensions = array('jpg', 'jpeg', 'png');
-    $profile_photo = rand(1000, 1000000) . "." . $fileActualExt;
-    move_uploaded_file($fileTmpName, $upload_dir . $profile_photo);
-    //check photo
-    // if (in_array($fileActualExt, $allowed)) {
-    //     if ($fileErr === 0) {
-    //         if ($fileSize < 1000000) {
-    //             $fileNameNew = uniqid('', true) . "." . $fileActualExt;
-    //             $fileDestination = 'uploads/' . $fileNameNew;
-    //             move_uploaded_file($fileTmpName, $fileDestination);
-    //         } else {
-    //             echo 'your file is too big!';
-    //         }
-    //     } else {
-    //         echo 'There is an error uploading your photo!';
-    //     }
-    // } else {
-    //     echo 'you can not upload photos of this type!';
-    // }
+    //check profile photo
+    if (empty($imgFile)) {
+        $errors['profile_photo'] = 'Profile photo is required <br />';
+    } else {
+        // $profile_photo = $_POST['profile_photo'];
+        $upload_dir = 'uploads/';
+        $imgExt = strtolower(pathinfo($imgFile, PATHINFO_EXTENSION));
+        $allowed_extensions = array('jpg', 'jpeg', 'png');
+        // rename uploading image
+        $profile_photo = rand(1000, 1000000) . "." . $imgExt;
+
+        if (in_array($imgExt, $allowed_extensions)) {
+            // if ($fileErr === 0) {
+            if ($imgSize < 5000000) {
+                // $imgFileNew = uniqid('', true) . "." . $imgExt;
+                // $fileDestination = 'uploads/' . $imgFileNew;
+                // move_uploaded_file($fileTmpName, $fileDestination);
+                move_uploaded_file($fileTmpName, $upload_dir . $profile_photo);
+            } else {
+                // echo 'your file is too big!';
+                $errors['profile_photo'] = 'Your file is too big!<br />';
+            }
+            // } else {
+            //     echo 'There is an error uploading your photo!';
+            // }
+        } else {
+            // echo 'you can not upload photos of this type!';
+            $errors['profile_photo'] = 'Only JPG, JPEG & PNG files are allowed.<br />';
+        }
+    }
 
     // check full_name
     if (empty($_POST['full_name'])) {
@@ -123,15 +132,20 @@ if (isset($_POST['submit'])) {
         $sql = "INSERT INTO resumes(profile_photo, full_name, email, phone, social_account, skills, user_profile, education, experience ) VALUES(:profile_photo, :full_name, :email, :phone, :social_account, :skills, :user_profile, :education, :experience)";
         $stmt = $pdo->prepare($sql);
 
+        // $stmt->bindParam(':profile_photo',$profile_photo);
+        // $stmt->bindParam(':full_name',$full_name);
+        // $stmt->bindParam(':email',$email);
+      
+
         // echo 'Post Added';
 
         if ($stmt->execute([':profile_photo' => $profile_photo, ':full_name' => $full_name, ':email' => $email, ':phone' => $phone, ':social_account' => $social_account, ':skills' => $skills, ':user_profile' => $user_profile, ':education' => $education, ':experience' => $experience])) {
             // $message = 'data inserted successfully';
             header('Location: index.php');
         }
-        // else {
-        //     echo 'query error: ' . mysqli_error($conn);
-        // }
+        else {
+            echo 'Error while inserting.';
+        }
     }
 } //end POST check
 
@@ -154,7 +168,9 @@ if (isset($_POST['submit'])) {
                 <img src="./images/person-placeholder.png" alt="">
             </div> -->
             <label for="photo"></label>
-            <input type="file" name="file" value="<?php echo htmlspecialchars($profile_photo) ?>">
+            <input type="file" name="user_image" value="<?php echo htmlspecialchars($profile_photo) ?>">
+            <!-- <div class="error-message"><?php echo $errors['profile_photo']; ?></div> -->
+
         </section>
         <section class="grid-area contact">
             <h4>Contact</h4>
