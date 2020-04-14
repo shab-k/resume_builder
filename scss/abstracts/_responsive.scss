@@ -7,9 +7,7 @@ html {
 
 @include media-max-xl {
   .card-container {
-    // display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    // grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
@@ -19,8 +17,7 @@ html {
 
 @include media-max-lg {
   .card-container {
-    // display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
@@ -30,8 +27,7 @@ html {
 
 @include media-max-md {
   .card-container {
-    // display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
@@ -41,7 +37,6 @@ html {
 
 @include media-max-sm {
   .card-container {
-    // display: grid;
     grid-template-columns: 1fr;
     width: 80%;
     max-width: 1200px;
@@ -52,9 +47,7 @@ html {
 
 @include media-max-xs {
   .card-container {
-    // display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    // grid-gap: 10px;
+    grid-template-columns: 1fr;
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;

@@ -69,26 +69,14 @@ btn:focus {
 	}
 }
 
-.btn--alert {
-	background-color: $base__alert-color;
+// .btn--alert {
+// 	background-color: $base__alert-color;
 	
-	&:hover,
-	&:focus {
-		background-color: darken($base__alert-color, 10%);
-	}
-}
-// .btn[disabled] {
-//     cursor: not-allowed;
-//     background-color: var(--btn-disabled-bg);
-//     color: var(--btn-disabled-label);
-//     box-shadow: none;
-//     opacity: 0.6;
-
-//     &:visited {
-//         color: var(--btn-disabled-label);
-//     }
+// 	&:hover,
+// 	&:focus {
+// 		background-color: darken($base__alert-color, 10%);
+// 	}
 // }
-
 /* button size */
 .btn--sm {
 	padding: $base-spacing/2.5 $base-spacing/1.25 ;
@@ -96,9 +84,5 @@ btn:focus {
 }
 .btn--lg {
 	padding: $base-spacing $base-spacing*1.5;
-}
-.btn--x-lg {
-	padding: $base-spacing*1.25;
-	font-size: $base__font-size*1.25;
 }
 

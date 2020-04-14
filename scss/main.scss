@@ -3,12 +3,7 @@
 // Configuration and helpers
 @import
   'abstracts/variables',
-  'abstracts/functions',
   'abstracts/mixins';
-  
-// Vendors
-@import
-  'vendors/fontawesome';
 
 // Base stuff
 @import
@@ -21,15 +16,11 @@
   'layouts/navigation',
   // 'layouts/grid',
   'layouts/header',
-  'layouts/footer',
-  // 'layouts/sidebar',
-  'layouts/forms';
+  'layouts/footer';
   
 // Components
 @import
-  'components/buttons',
-  'components/icons',
-  'components/media-objects';
+  'components/buttons';
 
 // Pages
 @import
