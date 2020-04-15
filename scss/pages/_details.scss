@@ -1,15 +1,27 @@
 .resume-date {
     text-align: center;
 }
-.photo-detail,
-.full-name-detail {
+
+.photo-detail {
     min-height: 190px;
 }
+// .full-name-detail {
+//     max-height: 190px;
+// }
 .contact-detail,
 .skills-detail {
     min-height: 400px;
 }
+
 .profile-detail,
 .main-detail {
     min-height: 500px;
+}
+
+.skills-text,
+.profile-text,
+.education-text,
+.experience-text {
+    white-space: pre-line;
+    // white-space: pre-wrap;
 }

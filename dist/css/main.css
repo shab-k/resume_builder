@@ -323,7 +323,7 @@ i {
 
 .grid-area {
   background: #e1e4e4;
-  padding: 20px 0 0 20px;
+  padding: 20px 30px 20px 20px;
   color: #0b0c0c;
 }
 
@@ -395,7 +395,7 @@ i {
 
 hr {
   display: block;
-  width: 90%;
+  width: 95%;
   border: 2px solid #0b0c0c;
 }
 
@@ -439,15 +439,30 @@ input {
 }
 
 .error-message {
-  color: #740707;
+  color: #970808;
+}
+
+::-webkit-input-placeholder {
+  color: #444;
+}
+
+:-ms-input-placeholder {
+  color: #444;
+}
+
+::-ms-input-placeholder {
+  color: #444;
+}
+
+::placeholder {
+  color: #444;
 }
 
 .resume-date {
   text-align: center;
 }
 
-.photo-detail,
-.full-name-detail {
+.photo-detail {
   min-height: 190px;
 }
 
@@ -459,6 +474,13 @@ input {
 .profile-detail,
 .main-detail {
   min-height: 500px;
+}
+
+.skills-text,
+.profile-text,
+.education-text,
+.experience-text {
+  white-space: pre-line;
 }
 
 html {

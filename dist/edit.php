@@ -2,6 +2,8 @@
 //  error_reporting( ~E_NOTICE ); //???
 include('config/db_connect.php');
 // $profile_photo = $full_name = $email = $phone = $social_account = $skills = $user_profile = $education = $experience = '';
+$profile_photo = $full_name = $email = $phone = $social_account = $skills = $user_profile = $education = $experience = '';
+$errors = array('profile_photo' => '', 'full_name' => '', 'email' => '', 'phone' => '', 'social_account' => '', 'skills' => '', 'user_profile' => '', 'education' => '', 'experience' => '');
 // check GET request id param
 if (isset($_GET['id']) && !empty($_GET['id'])) {
 
@@ -56,24 +58,25 @@ if (isset($_POST['submit'])) {
             $errors['profile_photo'] = 'Only JPG, JPEG & PNG files are allowed.<br />';
         }
     }
+     // check phone
+    //  if (empty($_POST['phone'])) {
+    //     // $errors['phone'] = 'Phone number is required <br />';
+    //     $phone = $resume->phone; 
+    // } else {
+    //     // $phone = $_POST['phone'];
+    //   if (ctype_digit($phone) && strlen($phone) == 10) {
+    //         $phone = substr($phone, 0, 3) . '-' .
+    //             substr($phone, 3, 3) . '-' .
+    //             substr($phone, 6);
+    //     }
+    // }
   
     $sql = "UPDATE resumes SET profile_photo=:profile_photo, full_name=:full_name, email=:email, phone=:phone, social_account=:social_account, skills=:skills, user_profile=:user_profile, education=:education, experience=:experience WHERE id=:id";
     $stmt = $pdo->prepare($sql);
 
-    // $stmt->bindParam(':profile_photo', $profile_photo);
-    // $stmt->bindParam(':uname', $username);
-    // $stmt->bindParam(':ujob', $userjob);
-    // $stmt->bindParam(':upic', $userpic);
-    // $stmt->bindParam(':uid', $id);
-
-   
     if ($stmt->execute([':id' => $id, ':profile_photo' => $profile_photo, ':full_name' => $full_name, ':email' => $email, ':phone' => $phone, ':social_account' => $social_account, ':skills' => $skills, ':user_profile' => $user_profile, ':education' => $education, ':experience' => $experience])) {
         header('Location: index.php');
     }
-    // if ($stmt->execute(['id' => $id])) {
-    //     header('Location: index.php');
-    // }
-
 
 }
 
@@ -104,10 +107,9 @@ if (isset($_POST['submit'])) {
 
 
             <i class="fas fa-phone-square"></i>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="<?= $resume->phone ?>">
-
-
-
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxx-xxx-xxxx" value="<?= $resume->phone ?>">
+            <!-- <div class="error-message"><?php echo $errors['phone']; ?></div> -->
+            <!-- pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  -->
             <i class="fab fa-linkedin"></i>
             <input type="text" name="social_account" value="<?= $resume->social_account ?>">
 
