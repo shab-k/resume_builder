@@ -26,6 +26,7 @@ html {
   .grid-area {
     padding: 10px;
   }
+
   .photo img {
     width: 60%;
   }
@@ -56,21 +57,26 @@ html {
   .contact-detail {
     min-height: 200px;
   }
+
   .full_name-detail h1 {
     margin: 0 auto;
+    font-size: 1.383rem;
   }
+
   .photo img {
     width: 50%;
   }
+
   .education-text {
     padding-bottom: 10px;
   }
+
   .profile-detail,
   .main-detail,
   .skills-detail {
     min-height: 100px;
     // min-height: auto;
-}
+  }
 
 }
 

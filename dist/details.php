@@ -31,7 +31,7 @@ if (isset($_GET['id'])) {
 <div class="wrapper">
     <?php if ($resume) : ?>
         <section class="grid-area full_name full_name-detail">
-            <h1><?= $resume->full_name ?></h1>
+            <h1 class="yotta"><?= $resume->full_name ?></h1>
         </section>
         <section class="grid-area photo photo-detail">
             <!-- <img src="./images/8biticon.jpg" alt=""> -->
