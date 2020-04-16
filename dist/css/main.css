@@ -493,6 +493,16 @@ input:invalid {
   white-space: pre-line;
 }
 
+.contact-detail__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+i {
+  padding-right: 10px;
+}
+
 html {
   font-size: 100%;
   line-height: 1.2;

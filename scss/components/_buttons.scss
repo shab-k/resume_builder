@@ -26,26 +26,6 @@ btn:focus {
 	box-shadow: $hover-box-shadow;
 }
 
-// .btn--light {
-// 	background-color: darken($base__background-color, 10%);
-// 	color: $base__accent-color;
-	
-// 	&:hover,
-// 	&:focus {
-// 		background-color: darken($base__background-color, 20%);
-// 		color: darken($base__accent-color, 10%);
-// 	}
-// }
-
-// .btn--dark {
-// 	background-color: $base__font-color;
-	
-// 	&:hover,
-// 	&:focus {
-// 		background-color: darken($base__font-color, 90%);
-// 	}
-// }
-
 // .btn--secondary {
 // 	background-color: $secondary__accent-color;
 	
@@ -54,27 +34,7 @@ btn:focus {
 // 		background-color: darken($secondary__accent-color, 20%);
 // 	}
 // }
-// .btn--secondary-outline {
-// 	background-color: $color-off-white;
-// 	border-color: $secondary__accent-color;
-// 	color: $secondary__accent-color;
-	
-// 	&:hover,
-// 	&:focus {
-// 		// background-color: darken($secondary-accent-color, 10%);
-// 		background-color: $secondary__accent-color;
-// 		color: $color-off-white;
-// 	}
-// }
 
-// .btn--alert {
-// 	background-color: $base__alert-color;
-	
-// 	&:hover,
-// 	&:focus {
-// 		background-color: darken($base__alert-color, 10%);
-// 	}
-// }
 /* button size */
 .btn--sm {
 	padding: $base-spacing/2.5 $base-spacing/1.25 ;

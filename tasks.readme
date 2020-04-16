@@ -1,20 +1,17 @@
-- Form & Regex
-- burger menu
-- edit page photo
-- button size
+- nav responsiveness
 - sass resp problem
-- err message font
 - edit form validation issue
 
 - Clean + delete undone text file
 - Deploy
 - Github
 - Update portfolio
-
+-----------------------
 Future Feature:
 - Color palette
 - Ask prmsn for delete
 - Link colors
+- burger menu
 ------------------------------------------------------------
 Done:
 ------
@@ -37,3 +34,14 @@ Apr. 14 2020:
 - Fix footer
 - Responsiveness
 - Design problems + typography
+
+
+Apr. 15 2020:
+===============
+
+Apr. 16 2020:
+===============
+- Form & Regex
+- err message font
+- edit page photo
+- button size

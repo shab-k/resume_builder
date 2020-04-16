@@ -40,14 +40,18 @@ if (isset($_GET['id'])) {
         <section class="grid-area contact contact-detail">
             <h4>Contact</h4>
             <hr>
-            <i class="fas fa-envelope"></i>
-            <div><?= $resume->email ?></div>
-
-            <i class="fas fa-phone-square"></i>
-            <div><?= $resume->phone ?></div>
-
-            <i class="fab fa-linkedin"></i>
-            <div><?= $resume->social_account ?></div>
+            <div class="contact-detail__items">
+                <i class="fas fa-envelope"></i>
+                <div><?= $resume->email ?></div>
+            </div>
+            <div class="contact-detail__items">
+                <i class="fas fa-phone-square"></i>
+                <div><?= $resume->phone ?></div>
+            </div>
+            <div class="contact-detail__items">
+                <i class="fab fa-linkedin"></i>
+                <div><?= $resume->social_account ?></div>
+            </div>
         </section>
         <section class="grid-area skills skills-detail">
             <h4>Skills</h4>
@@ -76,9 +80,8 @@ if (isset($_GET['id'])) {
 <!-- DELETE FORM -->
 <form action="details.php" method="POST" class="submit">
     <input type="hidden" name="id_to_delete" value="<?= $resume->id ?>">
-    <input class="btn btn--sm" type="submit" name="delete" value="Delete" class="btn btn--sm">
-
-    <a class="btn btn--sm" href="edit.php?id=<?= $resume->id ?>">Edit</a>
+    <button class="btn btn--sm" type="submit" name="delete" value="Delete">Delete</button>
+    <button class="btn btn--sm" type="submit" formaction="edit.php?id=<?= $resume->id ?>">Edit</button>
 </form>
 
 
