@@ -1,3 +1,5 @@
+TO Do:
+=========
 - grid vendor prefix error msg in main.css 
 - edit form validation
 - use sass vars
@@ -47,3 +49,4 @@ Apr. 16 2020:
 - edit page photo
 - button size & tags
 - nav responsiveness
+- Phone grid layout
