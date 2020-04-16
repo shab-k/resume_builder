@@ -15,10 +15,10 @@ button,
 	text-align: center;
 	border: 2px solid $secondary__accent-color;
 }
-btn:hover,
-btn:focus {
-	background-color: darken($base__accent-color, 10%);
-	color: $base__background-color;
+button:hover,
+button:focus {
+	background-color: $white;
+	color: $secondary__accent-color;
 	box-shadow: $hover-box-shadow;
 }
 

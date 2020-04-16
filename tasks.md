@@ -1,13 +1,14 @@
-- sass resp problem
-- edit form validation issue
+- grid vendor prefix error msg in main.css 
+- edit form validation
 - use sass vars
+- always check the main.css at the end
 
-- Clean + delete undone text file
+- Clean + ignore tasks file
 - Deploy
 - Github
 - Update portfolio
 -----------------------
-Future Feature:
+Future Features:
 - Color palette
 - Ask prmsn for delete
 - Link colors
@@ -44,5 +45,5 @@ Apr. 16 2020:
 - Form & Regex
 - err message font
 - edit page photo
-- button size
+- button size & tags
 - nav responsiveness

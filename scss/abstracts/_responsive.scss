@@ -22,8 +22,12 @@ html {
   .card-container {
     grid-template-columns: 1fr 1fr;
   }
+
   .grid-area {
-    padding: 7px;
+    padding: 10px;
+  }
+  .photo img {
+    width: 60%;
   }
 }
 
@@ -31,6 +35,43 @@ html {
   .card-container {
     grid-template-columns: 1fr;
   }
+
+  .wrapper {
+    // width: 95%;
+    // max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    // border: 2px solid $secondary__accent-color;
+    grid-template-columns: 2fr;
+    grid-auto-rows: minmax(50px, auto);
+    grid-template-areas:
+      "photo"
+      "full_name"
+      "contact"
+      "skills"
+      "profile"
+      "main"
+  }
+
+  .contact-detail {
+    min-height: 200px;
+  }
+  .full_name-detail h1 {
+    margin: 0 auto;
+  }
+  .photo img {
+    width: 50%;
+  }
+  .education-text {
+    padding-bottom: 10px;
+  }
+  .profile-detail,
+  .main-detail,
+  .skills-detail {
+    min-height: 100px;
+    // min-height: auto;
+}
+
 }
 
 @include media-max-xs {
