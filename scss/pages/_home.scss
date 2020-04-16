@@ -1,4 +1,4 @@
-i {
+.fa-long-arrow-alt-right {
     padding-left: 5px;
     vertical-align: middle;
 }
@@ -11,7 +11,6 @@ i {
 }
 
 .card-container {
-    // background-color: #ece7e7;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
@@ -26,7 +25,6 @@ i {
     overflow: hidden;
     box-shadow: 0 3px 10px $black;
     margin: 10px;
-    // border: 3px solid #eee;
     border-radius: 12px;
     display: grid;
     grid-template-columns: 1fr;
@@ -38,8 +36,8 @@ i {
 }
 
 .grid-area {
-    background: #e1e4e4;
-    color: #4d4b4b;
+    background: $color-off-white;
+    color: $dark_grey;
 }
 
 .card-image {

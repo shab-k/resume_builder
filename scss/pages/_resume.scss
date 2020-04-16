@@ -12,7 +12,7 @@
 }
 
 .grid-area {
-    background: #e1e4e4;
+    background: $color-off-white;
     // border: 2px #111 solid;
     padding: 20px 30px 20px 20px;
     color: $secondary__accent-color;
@@ -29,7 +29,6 @@
 .full_name {
     grid-area: full_name;
     display: flex;
-    // flex-wrap: wrap;
     align-items: center;
 }
 
@@ -75,7 +74,7 @@ textarea {
 
 textarea,
 input {
-    background-color: #e7e8e9;
+    background-color: $color-off-white;
     margin: 0 6px 0 2px;
 }
 
@@ -106,8 +105,9 @@ input {
     border-bottom: 1px solid $secondary__accent-color;
 }
 input:invalid {
-    box-shadow: 0 0 1px 1px red;
+    box-shadow: 0 0 1px 1px $base__alert-color;
   }
+//---------------------- for add page -----------------------
 .error-message {
     color: $base__alert-color;
 }

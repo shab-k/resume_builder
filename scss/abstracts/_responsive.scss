@@ -28,7 +28,8 @@ html {
   }
 
   .photo img {
-    width: 60%;
+    width: 150px;
+    height: 150px;
   }
 }
 
@@ -38,11 +39,8 @@ html {
   }
 
   .wrapper {
-    // width: 95%;
-    // max-width: 960px;
     margin: 0 auto;
     display: grid;
-    // border: 2px solid $secondary__accent-color;
     grid-template-columns: 2fr;
     grid-auto-rows: minmax(50px, auto);
     grid-template-areas:
@@ -64,7 +62,8 @@ html {
   }
 
   .photo img {
-    width: 50%;
+    width: 140px;
+    height: 140px;
   }
 
   .education-text {
@@ -75,7 +74,6 @@ html {
   .main-detail,
   .skills-detail {
     min-height: 100px;
-    // min-height: auto;
   }
 
 }

@@ -5,16 +5,17 @@ TO Do:
 - use sass vars
 - always check the main.css at the end
 
-- Clean + ignore tasks file
+- remove the tasks.md file
 - Deploy
 - Github
 - Update portfolio
 -----------------------
-Future Features:
+Future Possible Features:
 - Color palette
 - Ask prmsn for delete
 - Link colors
 - burger menu
+- BEM
 ------------------------------------------------------------
 Done:
 ------
@@ -50,3 +51,4 @@ Apr. 16 2020:
 - button size & tags
 - nav responsiveness
 - Phone grid layout
+- ignore tasks file

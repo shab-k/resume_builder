@@ -219,7 +219,7 @@ button:focus {
   font-size: 0.86957rem;
 }
 
-i {
+.fa-long-arrow-alt-right {
   padding-left: 5px;
   vertical-align: middle;
 }
@@ -257,8 +257,8 @@ i {
 }
 
 .grid-area {
-  background: #e1e4e4;
-  color: #4d4b4b;
+  background: #e7e4e0;
+  color: #444;
 }
 
 .card-image {
@@ -318,7 +318,7 @@ i {
 }
 
 .grid-area {
-  background: #e1e4e4;
+  background: #e7e4e0;
   padding: 20px 30px 20px 20px;
   color: #0b0c0c;
 }
@@ -399,7 +399,7 @@ textarea {
 
 textarea,
 input {
-  background-color: #e7e8e9;
+  background-color: #e7e4e0;
   margin: 0 6px 0 2px;
 }
 
@@ -432,12 +432,12 @@ input {
 }
 
 input:invalid {
-  -webkit-box-shadow: 0 0 1px 1px red;
-          box-shadow: 0 0 1px 1px red;
+  -webkit-box-shadow: 0 0 1px 1px #df1f1f;
+          box-shadow: 0 0 1px 1px #df1f1f;
 }
 
 .error-message {
-  color: #970808;
+  color: #df1f1f;
 }
 
 ::-webkit-input-placeholder {
@@ -495,8 +495,8 @@ i {
   margin: 0 auto;
   border: 6px solid #0b0c0c;
   border-radius: 50%;
-  width: 70%;
-  height: 70%;
+  width: 160px;
+  height: 160px;
 }
 
 html {
@@ -563,7 +563,8 @@ html {
     padding: 10px;
   }
   .photo img {
-    width: 60%;
+    width: 150px;
+    height: 150px;
   }
 }
 
@@ -589,7 +590,8 @@ html {
     font-size: 1.383rem;
   }
   .photo img {
-    width: 50%;
+    width: 140px;
+    height: 140px;
   }
   .education-text {
     padding-bottom: 10px;
