@@ -11,11 +11,7 @@ button,
 	transition: all $base-transition-duration $base-transition-timing;
 	cursor: pointer;
     border-radius: $base__border-radius;
-    // border: 3px solid #333;
 	box-shadow: $base__box-shadow;
-	// @include breakpoint(sm) {
-	// 	color: blue;
-	// }
 	text-align: center;
 	border: 2px solid $secondary__accent-color;
 }
@@ -26,21 +22,8 @@ btn:focus {
 	box-shadow: $hover-box-shadow;
 }
 
-// .btn--secondary {
-// 	background-color: $secondary__accent-color;
-	
-// 	&:hover,
-// 	&:focus {
-// 		background-color: darken($secondary__accent-color, 20%);
-// 	}
-// }
-
 /* button size */
 .btn--sm {
 	padding: $base-spacing/2.5 $base-spacing/1.25 ;
 	font-size: $base__font-size/1.15;
 }
-.btn--lg {
-	padding: $base-spacing $base-spacing*1.5;
-}
-

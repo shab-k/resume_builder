@@ -1,19 +1,5 @@
-// Regular font family
-$text-font-stack: 'Open Sans',
-'Helvetica Neue Light',
-'Helvetica Neue',
-'Helvetica',
-'Arial',
-sans-serif !default;
-// Code (monospace) font family
-$code-font-stack: 'Courier New',
-'DejaVu Sans Mono',
-'Bitstream Vera Sans Mono',
-'Monaco',
-monospace !default;
-
 // Container's maximum width
-$max-width: 1180px !default;
+$max-width: 1200px !default;
 
 // Spacing
 $base-spacing: 1rem;
@@ -21,7 +7,6 @@ $base-spacing: 1rem;
 // Typography
 $base__font-size: 1rem;
 $base__line-height: 1.3;
-// $header-line-height: 1.25;
 
 // Color Vars
 $white: #fff;
@@ -50,7 +35,6 @@ $base-transition-timing: ease-in-out;
 
 // Border Radius
 $base__border-radius: 2rem;
-// $base-border-radius: .1rem; ??
 
 // Borders
 $base-border: 1px solid darken($base__background-color, 20%);

@@ -1,5 +1,6 @@
 - sass resp problem
 - edit form validation issue
+- use sass vars
 
 - Clean + delete undone text file
 - Deploy
