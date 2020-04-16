@@ -335,10 +335,11 @@ i {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-left: 0;
 }
 
 .full_name {
@@ -420,12 +421,16 @@ input {
 }
 
 input[type=file] {
-  width: 90%;
-  margin: 20px;
+  width: 95%;
+  margin-top: 20px;
 }
 
 input[name=full_name] {
   margin-left: 10px;
+}
+
+input[name=user_image] {
+  padding-left: 0px;
 }
 
 .contact input {
@@ -436,6 +441,11 @@ input {
   border: none;
   border-color: transparent;
   border-bottom: 1px solid #0b0c0c;
+}
+
+input:invalid {
+  -webkit-box-shadow: 0 0 1px 1px red;
+          box-shadow: 0 0 1px 1px red;
 }
 
 .error-message {

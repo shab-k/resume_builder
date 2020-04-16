@@ -41,17 +41,17 @@ if (isset($_POST['submit'])) {
     } else {
         $full_name = $_POST['full_name'];
         if (!preg_match('/^[a-zA-Z\s]+$/', $full_name)) {
-            $errors['full_name'] = 'Fullname must be in letters & spaces only';
+            $errors['full_name'] = 'Letters & spaces only';
         }
     }
 
     // check email
     if (empty($_POST['email'])) {
-        $errors['email'] = 'An email is required <br />';
+        $errors['email'] = 'Email is required <br />';
     } else {
         $email = $_POST['email'];
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $errors['email'] = 'Email must be a valid email address';
+            $errors['email'] = 'Please provide a valid Email address';
         }
     }
     // check phone
@@ -67,12 +67,16 @@ if (isset($_POST['submit'])) {
     }
     // check social account
     if (empty($_POST['social_account'])) {
-        $errors['social_account'] = 'A social account link is required <br />';
+        $errors['social_account'] = 'Social account link is required <br />';
     } else {
         $social_account = $_POST['social_account'];
-        // if (!preg_match('/^-(\s(.*+))*\n-\s(.*)*$/', $social_account)) {  //////change it!!!!
+        // if (!preg_match('/^((?:http(?:s)?\:\/\/)?[a-zA-Z0-9_-]+(?:.[a-zA-Z0-9_-]+)*.[a-zA-Z]{2,4}(?:\/[a-zA-Z0-9_]+)*(?:\/[a-zA-Z0-9_]+.[a-zA-Z]{2,4}(?:\?[a-zA-Z0-9_]+\=[a-zA-Z0-9_]+)?)?(?:\&[a-zA-Z0-9_]+\=[a-zA-Z0-9_]+)*)$/', $social_account)) {  //////change it!!!!
         //     $errors['social_account'] =  'blah!';
         // }
+        if (!filter_var($social_account, FILTER_VALIDATE_URL)) {
+            $errors['social_account'] = 'Please provide a valid account address';
+        }
+
     }
 
     // check skills
@@ -140,13 +144,13 @@ if (isset($_POST['submit'])) {
         <section class="grid-area full_name">
             <h4>Full Name:</h4>
             <label for="full_name"></label>
-            <input type="text" name="full_name" value="<?php echo htmlspecialchars($full_name) ?>">
-            <div class="error-message"><?php echo $errors['full_name']; ?></div>
+            <input type="text" name="full_name" max="50"  placeholder="Letters & spaces only" value="<?php echo htmlspecialchars($full_name) ?>">
+            <div class="error-message nano"><?php echo $errors['full_name']; ?></div>
         </section>
         <section class="grid-area photo">
             <label for="photo"></label>
             <input class="nano" type="file" name="user_image" value="<?php echo htmlspecialchars($profile_photo) ?>">
-            <div class="error-message"><?php echo $errors['profile_photo']; ?></div>
+            <div class="error-message nano"><?php echo $errors['profile_photo']; ?></div>
 
         </section>
         <section class="grid-area contact">
@@ -155,18 +159,17 @@ if (isset($_POST['submit'])) {
             <label for="email"></label>
             <i class="fas fa-envelope"></i>
             <input type="text" name="email" value="<?php echo htmlspecialchars($email) ?>">
-            <div class="error-message"><?php echo $errors['email']; ?></div>
+            <div class="error-message nano"><?php echo $errors['email']; ?></div>
 
             <label for="phone"></label>
             <i class="fas fa-phone-square"></i>
-            <input type="tel" id="phone" name="phone" value="<?php echo htmlspecialchars($phone) ?>">
-            <!-- pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" -->
-            <div class="error-message"><?php echo $errors['phone']; ?></div>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxx-xxx-xxxx" value="<?php echo htmlspecialchars($phone) ?>">
+            <div class="error-message nano"><?php echo $errors['phone']; ?></div>
 
             <label for="social media account"></label>
             <i class="fab fa-linkedin"></i>
             <input type="text" name="social_account" value="<?php echo htmlspecialchars($social_account) ?>">
-            <div class="error-message"><?php echo $errors['social_account']; ?></div>
+            <div class="error-message nano"><?php echo $errors['social_account']; ?></div>
         </section>
         <section class="grid-area skills">
             <h4>Skills</h4>
@@ -174,26 +177,26 @@ if (isset($_POST['submit'])) {
             <label for="skills"></label>
             <!-- <input type="text" full_name="skills"> -->
             <textarea name="skills" id="skills" cols="55" rows="10"><?php echo htmlspecialchars($skills) ?></textarea>
-            <div class="error-message"><?php echo $errors['skills']; ?></div>
+            <div class="error-message nano"><?php echo $errors['skills']; ?></div>
         </section>
         <section class="grid-area profile">
             <h4>Profile</h4>
             <hr>
             <label for="user_profile"></label>
             <textarea name="user_profile" id="user_profile" cols="25" rows="15"><?php echo htmlspecialchars($user_profile) ?></textarea>
-            <div class="error-message"><?php echo $errors['user_profile']; ?></div>
+            <div class="error-message nano"><?php echo $errors['user_profile']; ?></div>
         </section>
         <section class="grid-area main">
             <h4>Education</h4>
             <hr>
             <label for="education"></label>
             <textarea name="education" id="education" cols="55" rows="10"><?php echo htmlspecialchars($education) ?></textarea>
-            <div class="error-message"><?php echo $errors['education']; ?></div>
+            <div class="error-message nano"><?php echo $errors['education']; ?></div>
             <h4>Experience</h4>
             <hr>
             <label for="experience"></label>
             <textarea name="experience" id="experience" cols="55" rows="10"><?php echo htmlspecialchars($experience) ?></textarea>
-            <div class="error-message"><?php echo $errors['experience']; ?></div>
+            <div class="error-message nano"><?php echo $errors['experience']; ?></div>
         </section>
     </div>
     <div class="submit">

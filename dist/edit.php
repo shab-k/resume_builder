@@ -107,7 +107,7 @@ if (isset($_POST['submit'])) {
 
 
             <i class="fas fa-phone-square"></i>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxx-xxx-xxxx" value="<?= $resume->phone ?>">
+            <input type="tel" id="phone" name="phone" value="<?= $resume->phone ?>">
             <!-- <div class="error-message"><?php echo $errors['phone']; ?></div> -->
             <!-- pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  -->
             <i class="fab fa-linkedin"></i>

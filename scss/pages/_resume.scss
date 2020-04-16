@@ -24,8 +24,9 @@
     grid-area: photo;
     background-color: $base__accent-color;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    padding-left: 0;
+    // padding-left: 0;
     // padding: 10px 0;
     // justify-content: center;
 }
@@ -33,6 +34,7 @@
 .full_name {
     grid-area: full_name;
     display: flex;
+    // flex-wrap: wrap;
     align-items: center;
 }
 
@@ -102,12 +104,15 @@ input {
 }
 
 input[type=file] {
-    width: 90%;
-    margin: 20px;
+    width: 95%;
+    margin-top: 20px;
 }
 
 input[name=full_name] {
     margin-left: 10px;
+}
+input[name=user_image] {
+    padding-left: 0px;
 }
 
 .contact input {
@@ -119,7 +124,9 @@ input {
     border-color: transparent;
     border-bottom: 1px solid $secondary__accent-color;
 }
-
+input:invalid {
+    box-shadow: 0 0 1px 1px red;
+  }
 .error-message {
     color: $base__alert-color;
 }
