@@ -2,7 +2,6 @@ TO Do:
 =========
 - grid vendor prefix error msg in main.css 
 - edit form validation
-- use sass vars
 - always check the main.css at the end
 
 - remove the tasks.md file
@@ -24,7 +23,7 @@ Apr. ?? 2020:
 - Basic Structure 
 Apr. 10 2020:
 ===============
-- Git
+- started using Git
 - PDO
 
 Apr. 13 2020:
@@ -39,7 +38,6 @@ Apr. 14 2020:
 - Responsiveness
 - Design problems + typography
 
-
 Apr. 15 2020:
 ===============
 
@@ -52,3 +50,4 @@ Apr. 16 2020:
 - nav responsiveness
 - Phone grid layout
 - ignore tasks file
+- use sass vars
