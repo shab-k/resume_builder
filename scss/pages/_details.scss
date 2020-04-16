@@ -32,3 +32,12 @@
 i {
     padding-right: 10px;
 }
+.photo img {
+    margin: 0 auto;
+    border: 6px solid $secondary__accent-color;
+    border-radius: 50%;
+    // width: 150px;
+    // height: 150px;
+    width: 70%;
+    height: 70%;
+}

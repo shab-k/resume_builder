@@ -76,12 +76,12 @@ if (isset($_GET['id'])) {
         <h5>No such resume exists!</h5>
     <?php endif ?>
 </div>
-<p class="resume-date">Created At: <?= $resume->created_at ?></p>
+<p class="resume-date nano">Created At: <?= $resume->created_at ?></p>
 <!-- DELETE FORM -->
 <form action="details.php" method="POST" class="submit">
     <input type="hidden" name="id_to_delete" value="<?= $resume->id ?>">
-    <button class="btn btn--sm" type="submit" name="delete" value="Delete">Delete</button>
     <button class="btn btn--sm" type="submit" formaction="edit.php?id=<?= $resume->id ?>">Edit</button>
+    <button class="btn btn--sm" type="submit" name="delete" value="Delete">Delete</button>
 </form>
 
 
