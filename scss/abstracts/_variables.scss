@@ -41,8 +41,8 @@ $base__border-radius: 2rem;
 $base-border: 1px solid darken($base__background-color, 20%);
 
 // Shadow
-$base__box-shadow: 0 2px 2px 0 rgba(black, 0.2);
-$hover-box-shadow: 0 2px 2px 0 rgba(black, 0.4);
+$base__box-shadow: 0 3px 10px $black;
+$invalid__box-shadow: 0 0 1px 1px $base__alert-color;
 
 // Breakpoints
 $breakpoints: (

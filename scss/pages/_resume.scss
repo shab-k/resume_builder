@@ -1,3 +1,4 @@
+//---------- for both add & details page -----------
 .wrapper {
     max-width: 960px;
     margin: 10px auto;
@@ -68,50 +69,3 @@ hr {
     margin: 0 auto;
 }
 
-textarea {
-    width: 89%;
-}
-
-textarea,
-input {
-    background-color: $color-off-white;
-    margin: 0 6px 0 2px;
-}
-
-.contact input,
-.profile textarea {
-    background-color: $base__accent-color;
-}
-
-input[type=file] {
-    width: 95%;
-    margin-top: 20px;
-}
-
-input[name=full_name] {
-    margin-left: 10px;
-}
-input[name=user_image] {
-    padding-left: 0px;
-}
-
-.contact input {
-    width: 80%;
-}
-
-input {
-    border: none;
-    border-color: transparent;
-    border-bottom: 1px solid $secondary__accent-color;
-}
-input:invalid {
-    box-shadow: 0 0 1px 1px $base__alert-color;
-  }
-//---------------------- for add page -----------------------
-.error-message {
-    color: $base__alert-color;
-}
-
-::placeholder {
-    color: $dark_grey;
-}

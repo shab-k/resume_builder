@@ -41,6 +41,7 @@ html {
   .wrapper {
     margin: 0 auto;
     display: grid;
+    @include display-grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: minmax(50px, auto);
     grid-template-areas:
