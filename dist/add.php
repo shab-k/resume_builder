@@ -26,11 +26,9 @@ if (isset($_POST['submit'])) {
             if ($imgSize < 5000000) {
                 move_uploaded_file($fileTmpName, $upload_dir . $profile_photo);
             } else {
-                // echo 'your file is too big!';
                 $errors['profile_photo'] = 'Your file is too big!<br />';
             }
         } else {
-            // echo 'you can not upload photos of this type!';
             $errors['profile_photo'] = 'Only JPG, JPEG & PNG files are allowed.<br />';
         }
     }
@@ -76,7 +74,6 @@ if (isset($_POST['submit'])) {
         if (!filter_var($social_account, FILTER_VALIDATE_URL)) {
             $errors['social_account'] = 'Please provide a valid account address';
         }
-
     }
 
     // check skills
@@ -84,39 +81,24 @@ if (isset($_POST['submit'])) {
         $errors['skills'] =  'Skills are required <br />';
     } else {
         $skills = $_POST['skills'];
-
-        // if (!preg_match('', $skills)) {
-        //     $errors['skills'] =  'Each paragraph should start with a hyphen!';
-        // }
-
-        // $msg = "<p>" . preg_replace('#([\\r\]\\s*?[\\r\]){2,}#', '</p>$0<p>', htmlspecialchars(strip_tags(stripslashes($message['Msg'])))) . "</p>";
     }
     // check user_profile
     if (empty($_POST['user_profile'])) {
         $errors['user_profile'] =  'Profile text is required <br />';
     } else {
         $user_profile = $_POST['user_profile'];
-        // if (!preg_match('/^[a-zA-Z\s]+$/', $user_profile)) {
-        //     $errors['user_profile'] = 'profile must be in letters & spaces only!';
-        // }
     }
     // check education
     if (empty($_POST['education'])) {
         $errors['education'] =  'Education is required <br />';
     } else {
         $education = $_POST['education'];
-        // if (!preg_match('/^[a-zA-Z\s]+$/', $education)) {
-        //     $errors['education'] = 'education must be in letters & spaces only!';
-        // }
     }
     // check experience
     if (empty($_POST['experience'])) {
         $errors['experience'] =  'Experience is required <br />';
     } else {
         $experience = $_POST['experience'];
-        // if (!preg_match('/^[a-zA-Z\s]+$/', $experience)) {
-        //     $errors['experience'] = 'experience must be letters and spaces only';
-        // }
     }
 
     if (!array_filter($errors)) {
@@ -144,7 +126,7 @@ if (isset($_POST['submit'])) {
         <section class="grid-area full_name">
             <h4>Full Name:</h4>
             <label for="full_name"></label>
-            <input type="text" name="full_name" max="50"  placeholder="Letters & spaces only" value="<?php echo htmlspecialchars($full_name) ?>">
+            <input type="text" name="full_name" max="50" placeholder="Letters & spaces only" value="<?php echo htmlspecialchars($full_name) ?>">
             <div class="error-message nano"><?php echo $errors['full_name']; ?></div>
         </section>
         <section class="grid-area photo">
@@ -175,7 +157,6 @@ if (isset($_POST['submit'])) {
             <h4>Skills</h4>
             <hr>
             <label for="skills"></label>
-            <!-- <input type="text" full_name="skills"> -->
             <textarea name="skills" id="skills" cols="55" rows="10"><?php echo htmlspecialchars($skills) ?></textarea>
             <div class="error-message nano"><?php echo $errors['skills']; ?></div>
         </section>

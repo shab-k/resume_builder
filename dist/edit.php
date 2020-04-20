@@ -1,7 +1,7 @@
 <?php
-//  error_reporting( ~E_NOTICE ); //???
+
 include('config/db_connect.php');
-// $profile_photo = $full_name = $email = $phone = $social_account = $skills = $user_profile = $education = $experience = '';
+
 $errors = array('profile_photo' => '', 'full_name' => '', 'email' => '', 'phone' => '', 'social_account' => '', 'skills' => '', 'user_profile' => '', 'education' => '', 'experience' => '');
 // check GET request id param
 if (isset($_GET['id']) && !empty($_GET['id'])) {
@@ -11,8 +11,6 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     $stmt = $pdo->prepare($sql);
     $stmt->execute(['id' => $id]);
     $resume = $stmt->fetch();
-    // $resume = $stmt->fetch(PDO::FETCH_ASSOC);
-    // extract($resume);
 } else {
     header("Location: index.php");
 }
@@ -158,26 +156,19 @@ if (isset($_POST['submit'])) {
         <section class="grid-area skills">
             <h4>Skills</h4>
             <hr>
-
-            <!-- <input type="text" full_name="skills"> -->
             <textarea name="skills" id="skills" cols="55" rows="10"><?= $resume->skills ?></textarea>
-
         </section>
         <section class="grid-area profile">
             <h4>Profile</h4>
             <hr>
-
             <textarea name="user_profile" id="user_profile" cols="25" rows="15"><?= $resume->user_profile ?></textarea>
         </section>
         <section class="grid-area main">
             <h4>Education</h4>
             <hr>
-
             <textarea name="education" id="education" cols="55" rows="10"><?= $resume->education ?></textarea>
-
             <h4>Experience</h4>
             <hr>
-
             <textarea name="experience" id="experience" cols="55" rows="10"><?= $resume->experience ?></textarea>
         </section>
     </div>
@@ -186,10 +177,8 @@ if (isset($_POST['submit'])) {
     <div class="submit">
         <input type="hidden" name="id" value="<?= $resume->id ?>">
         <button class="btn btn--sm" type="submit" name="submit" value="Submit" class="btn btn--sm">Edit</button>
-        <!-- <input class="btn btn--sm submit" type="submit" name="submit" value="Submit" class="btn btn--sm"> -->
     </div>
 </form>
-
 
 <?php include('templates/footer.php'); ?>
 
