@@ -1,6 +1,3 @@
-// p, ul, dl, a {
-//     @include font-size($p-font-sizes);
-//   }
 html {
   @include font-size($html-font-sizes);
 }
@@ -57,7 +54,6 @@ html {
   }
 
   .full_name-detail h1 {
-    // margin: 0 auto;
     font-size: 1.7rem;
   }
 
