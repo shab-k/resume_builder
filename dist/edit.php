@@ -2,7 +2,6 @@
 //  error_reporting( ~E_NOTICE ); //???
 include('config/db_connect.php');
 // $profile_photo = $full_name = $email = $phone = $social_account = $skills = $user_profile = $education = $experience = '';
-$profile_photo = $full_name = $email = $phone = $social_account = $skills = $user_profile = $education = $experience = '';
 $errors = array('profile_photo' => '', 'full_name' => '', 'email' => '', 'phone' => '', 'social_account' => '', 'skills' => '', 'user_profile' => '', 'education' => '', 'experience' => '');
 // check GET request id param
 if (isset($_GET['id']) && !empty($_GET['id'])) {
@@ -45,10 +44,10 @@ if (isset($_POST['submit'])) {
         $profile_photo = rand(1000, 1000000) . "." . $imgExt;
 
         if (in_array($imgExt, $allowed_extensions)) {
-            
+
             if ($imgSize < 5000000) {
                 unlink($upload_dir . $resume->profile_photo);
-                move_uploaded_file($fileTmpName, $upload_dir.$profile_photo);
+                move_uploaded_file($fileTmpName, $upload_dir . $profile_photo);
             } else {
                 // echo 'your file is too big!';
                 $errors['profile_photo'] = 'Your file is too big! it should be less then 5MB.<br />';
@@ -58,26 +57,69 @@ if (isset($_POST['submit'])) {
             $errors['profile_photo'] = 'Only JPG, JPEG & PNG files are allowed.<br />';
         }
     }
-     // check phone
-    //  if (empty($_POST['phone'])) {
-    //     // $errors['phone'] = 'Phone number is required <br />';
-    //     $phone = $resume->phone; 
-    // } else {
-    //     // $phone = $_POST['phone'];
-    //   if (ctype_digit($phone) && strlen($phone) == 10) {
-    //         $phone = substr($phone, 0, 3) . '-' .
-    //             substr($phone, 3, 3) . '-' .
-    //             substr($phone, 6);
-    //     }
+    // check full_name
+    if (empty($_POST['full_name'])) {
+        $full_name = $resume->full_name;
+    }
+    // else {
+    // $full_name = $_POST['full_name'];
+    // if (!preg_match('/^[a-zA-Z\s]+$/', $full_name)) {
+    //     $errors['full_name'] = 'Letters & spaces only';
     // }
-  
+    // }
+
+    // check email
+    if (empty($_POST['email'])) {
+        $email = $resume->email;
+    }
+    // else {
+    // $email = $_POST['email'];
+    // if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    //     $errors['email'] = 'Please provide a valid Email address';
+    // }
+    // }
+    // check phone
+    if (empty($_POST['phone'])) {
+        $phone = $resume->phone;
+    } else {
+        // $phone = $_POST['phone'];
+        if (ctype_digit($phone) && strlen($phone) == 10) {
+            $phone = substr($phone, 0, 3) . '-' .
+                substr($phone, 3, 3) . '-' .
+                substr($phone, 6);
+        }
+    }
+    // check social account
+    if (empty($_POST['social_account'])) {
+        $social_account = $resume->social_account;
+    }
+
+    // check skills
+    if (empty($_POST['skills'])) {
+        $skills = $resume->skills;
+    }
+
+    // check user_profile
+    if (empty($_POST['user_profile'])) {
+        $user_profile = $resume->user_profile;
+    }
+
+    // check education
+    if (empty($_POST['education'])) {
+        $education = $resume->education;
+    }
+
+    // check experience
+    if (empty($_POST['experience'])) {
+        $experience = $resume->experience;
+    }
+
     $sql = "UPDATE resumes SET profile_photo=:profile_photo, full_name=:full_name, email=:email, phone=:phone, social_account=:social_account, skills=:skills, user_profile=:user_profile, education=:education, experience=:experience WHERE id=:id";
     $stmt = $pdo->prepare($sql);
 
     if ($stmt->execute([':id' => $id, ':profile_photo' => $profile_photo, ':full_name' => $full_name, ':email' => $email, ':phone' => $phone, ':social_account' => $social_account, ':skills' => $skills, ':user_profile' => $user_profile, ':education' => $education, ':experience' => $experience])) {
         header('Location: index.php');
     }
-
 }
 
 ?>
@@ -90,7 +132,7 @@ if (isset($_POST['submit'])) {
     <div class="wrapper">
         <section class="grid-area full_name">
             <h4>Full Name:</h4>
-            <input type="text" name="full_name" value="<?= $resume->full_name ?>">
+            <input type="text" name="full_name" pattern="^[a-zA-Z\s]+$" placeholder="Only letters & spaces!" value="<?= $resume->full_name ?>">
         </section>
         <section class="grid-area photo">
             <img src="uploads/<?= $resume->profile_photo ?>" class="resume">
@@ -103,15 +145,14 @@ if (isset($_POST['submit'])) {
             <hr>
 
             <i class="fas fa-envelope"></i>
-            <input type="text" name="email" value="<?= $resume->email ?>">
+            <input type="text" name="email" pattern="[\w-]+@([\w-]+\.)+[\w-]+" placeholder="Must be a valid email address!" value="<?= $resume->email ?>">
 
 
             <i class="fas fa-phone-square"></i>
-            <input type="tel" id="phone" name="phone" value="<?= $resume->phone ?>">
-            <!-- <div class="error-message"><?php echo $errors['phone']; ?></div> -->
-            <!-- pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  -->
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxx-xxx-xxxx" value="<?= $resume->phone ?>">
+
             <i class="fab fa-linkedin"></i>
-            <input type="text" name="social_account" value="<?= $resume->social_account ?>">
+            <input type="text" name="social_account" pattern="[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)" value="<?= $resume->social_account ?>">
 
         </section>
         <section class="grid-area skills">
