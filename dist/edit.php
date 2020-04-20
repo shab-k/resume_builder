@@ -1,6 +1,7 @@
 <?php
 
-include('config/db_connect.php');
+// include('config/db_connect.php');
+require_once('config/db_connect.php');
 
 $errors = array('profile_photo' => '', 'full_name' => '', 'email' => '', 'phone' => '', 'social_account' => '', 'skills' => '', 'user_profile' => '', 'education' => '', 'experience' => '');
 // check GET request id param

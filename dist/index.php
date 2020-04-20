@@ -1,5 +1,6 @@
 <?php
-include('config/db_connect.php');
+// include('config/db_connect.php');
+require_once('config/db_connect.php');
 
 $sql = 'SELECT * FROM resumes ORDER BY created_at DESC';
 $stmt = $pdo->prepare($sql);

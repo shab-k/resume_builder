@@ -1,6 +1,8 @@
 <?php
 
-include('config/db_connect.php');
+// include('config/db_connect.php');
+require_once('config/db_connect.php');
+
 
 $profile_photo = $full_name = $email = $phone = $social_account = $skills = $user_profile = $education = $experience = '';
 $errors = array('profile_photo' => '', 'full_name' => '', 'email' => '', 'phone' => '', 'social_account' => '', 'skills' => '', 'user_profile' => '', 'education' => '', 'experience' => '');
